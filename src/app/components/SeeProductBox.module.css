@@ -1,0 +1,39 @@
+.main {
+    display: grid;
+    height: 734px;
+    font-family: "Manrope", sans-serif;
+    /* border-style: ridge;
+    border-color: white; */
+    border-width: 0.5px;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-left {
+    display: grid;
+    font-family: "Manrope", sans-serif;
+    border-width: 0.5px;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr;
+    gap: 1em;
+}
+
+.see-product-description {
+    font-size: 15px;
+    opacity: 75%;
+    padding-right: 4em;
+}
+
+.see-product-btn {
+    font-size: 13px;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-style: none;
+    background-color: #D87D4A;
+    margin-top: 0.8em;
+    height: 48px;
+    width: 160px;
+}
+
+.see-product-btn:hover {
+    cursor: pointer;
+}
