@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <Header />
       <Body />
+      {/* <Footer /> */}
     </>
   );
   // <div className={styles.page}>

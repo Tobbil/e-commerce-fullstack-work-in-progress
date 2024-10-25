@@ -1,0 +1,42 @@
+.category {
+    background-color: #f1f1f1;
+    display: grid;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr 0.3fr;
+    overflow: visible;
+    height: 284px;
+    justify-items: center;
+}
+
+.category-image-left {
+    position: relative;
+    height: 7.5em;
+    top: -5em;
+}
+
+.category-image-center {
+    position: relative;
+    height: 7.5em;
+    top: -5em;
+
+}
+
+.category-image-right {
+    position: relative;
+    height: 7.5em;
+    top: -4em;
+}
+
+
+.blank-div-white-bg {
+    height: 4em;
+    width: 100%;
+    background-color: white;
+}
+
+.category-image-shadow {
+    background-color: transparent;
+    grid-row: span 2;
+    position: relative;
+    top: -5em;
+    justify-self: center;
+}
