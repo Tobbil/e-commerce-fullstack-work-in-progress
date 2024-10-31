@@ -2,7 +2,7 @@ import Image from "next/image";
 import SeeProductBox from "../components/SeeProductBox";
 
 export default function Header() {
-    const menuHover = "hover:text-[#d87d4a] transition duration-200 ease-in-out"
+  const menuHover = "hover:text-[#d87d4a] transition duration-200 ease-in-out";
   return (
     <>
       <div className="m-0 w-screen bg-[#141414]">
@@ -14,10 +14,18 @@ export default function Header() {
               </a>
             </div>
             <div className="grid grid-cols-menu gap-4 text-fs-13 font-semibold tracking-200 justify-items-center items-center text-[#f2f2f2]">
-              <a className={`${menuHover} pl-[2rem]`} href="#">HOME</a>
-              <a className={menuHover} href="#">HEADPHONES</a>
-              <a className={`${menuHover} pl-[0.5rem]`} href="#">SPEAKERS</a>
-              <a className={menuHover} href="#">EARPHONES</a>
+              <a className={`${menuHover} pl-[2rem]`} href="#">
+                HOME
+              </a>
+              <a className={menuHover} href="#">
+                HEADPHONES
+              </a>
+              <a className={`${menuHover} pl-[0.5rem]`} href="#">
+                SPEAKERS
+              </a>
+              <a className={menuHover} href="#">
+                EARPHONES
+              </a>
             </div>
             <div className="justify-self-end self-center">
               <a href="#">
@@ -30,15 +38,23 @@ export default function Header() {
           </div>
           <div className="grid grid-cols-2 gap-[20px] overflow-hidden text-darkwhite">
             <div>
-              <SeeProductBox 
-                colorInvert={true}
+              <SeeProductBox
+                textColor={"white"}
                 newProduct={true}
+                lowerOpacityNewProduct={true}
+                btnColor={"#D87D4A"}
                 headlineText="XX99 MARK II HEADPHONES"
                 descriptionText="Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
-                />
+              />
             </div>
             <div className="h-[734px]">
-              <Image className="absolute" src="/header_headphones.png" alt="black heapdhones" width={710} height={729} />
+              <Image
+                className="absolute"
+                src="/header_headphones.png"
+                alt="black heapdhones"
+                width={710}
+                height={729}
+              />
             </div>
           </div>
         </div>

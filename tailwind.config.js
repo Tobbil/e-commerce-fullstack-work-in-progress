@@ -29,6 +29,9 @@ module.exports = {
       },
       colors: {
         darkwhite: "#f2f2f2",
+      },
+      backgroundImage: {
+        "featured-zx9": "url('/FeaturedBigZX9.png')"
       }
     },
   },
