@@ -1,22 +1,22 @@
-import styles from "../components/Categories.module.css";
+import "tailwindcss/tailwind.css";
 import CategoryThumbnail from "../components/CategoryThumbnail";
 
 export default function Categories() {
   return (
     <>
-      <div className={styles["categories-container"]}>
-        <div className={styles["categories"]}>
-          <div className={styles["category-left"]}>
+      <div className="w-screen justify-items-center">
+        <div className="grid grid-cols-3 h-[284px] w-[1110px] mt-32 gap-6">
+          <div>
             <CategoryThumbnail
               div="left"
               categoryName="HEADPHONES"
               image="/categories_headphones.png"
-              alt="small headphones "
+              alt="small headphones"
               width={122.95}
               height={160}
             />
           </div>
-          <div className={styles["category-center"]}>
+          <div>
             <CategoryThumbnail
               div="center"
               categoryName="SPEAKERS"
@@ -26,7 +26,7 @@ export default function Categories() {
               height={146}
             />
           </div>
-          <div className={styles["category-right"]}>
+          <div>
             <CategoryThumbnail
               div="right"
               categoryName="EARPHONES"
