@@ -29,9 +29,11 @@ module.exports = {
       },
       colors: {
         darkwhite: "#f2f2f2",
+        orange: "#D87D4A"
       },
       backgroundImage: {
-        "featured-zx9": "url('/FeaturedBigZX9.png')"
+        "featured-zx9": "url('/FeaturedBigZX9.png')",
+        "categories-shadow": "url('/CategoriesShadowBG.png')"
       },
       height: {
         "400": "400px",
