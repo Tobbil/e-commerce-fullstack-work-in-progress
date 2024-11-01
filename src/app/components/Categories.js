@@ -8,6 +8,7 @@ export default function Categories() {
         <div className="grid grid-cols-3 h-[284px] w-[1110px] mt-32 gap-6">
           <div>
             <CategoryThumbnail
+              topValue="-top-[5rem]"
               div="left"
               categoryName="HEADPHONES"
               image="/categories_headphones.png"
@@ -18,6 +19,7 @@ export default function Categories() {
           </div>
           <div>
             <CategoryThumbnail
+              topValue="-top-[5rem]"
               div="center"
               categoryName="SPEAKERS"
               image="/categories_speaker.png"
@@ -28,6 +30,7 @@ export default function Categories() {
           </div>
           <div>
             <CategoryThumbnail
+              topValue="-top-[4rem]"
               div="right"
               categoryName="EARPHONES"
               image="/categories_earphones.png"

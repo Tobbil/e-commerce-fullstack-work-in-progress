@@ -37,10 +37,9 @@ export default function Header() {
             <hr />
           </div>
           <div className="grid grid-cols-2 gap-[20px] overflow-hidden text-darkwhite">
-            <div className="flex items-center" id="product1">
+            <div className="flex items-center">
               <SeeProductBox
-                height="400px"
-                width="400px"
+                dimensions="h-400 w-400"
                 paddingDesc="pr-16"
                 newProduct={true}
                 btnColor="orange"

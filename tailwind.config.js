@@ -32,6 +32,14 @@ module.exports = {
       },
       backgroundImage: {
         "featured-zx9": "url('/FeaturedBigZX9.png')"
+      },
+      height: {
+        "400": "400px",
+        "350": "350px"
+      },
+      width: {
+        "400": "400px",
+        "350": "350px"
       }
     },
   },
