@@ -37,12 +37,13 @@ export default function Header() {
             <hr />
           </div>
           <div className="grid grid-cols-2 gap-[20px] overflow-hidden text-darkwhite">
-            <div>
+            <div className="flex items-center" id="product1">
               <SeeProductBox
-                textColor={"white"}
+                height="400px"
+                width="400px"
+                paddingDesc="pr-16"
                 newProduct={true}
-                lowerOpacityNewProduct={true}
-                btnColor={"#D87D4A"}
+                btnColor="orange"
                 headlineText="XX99 MARK II HEADPHONES"
                 descriptionText="Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
               />
