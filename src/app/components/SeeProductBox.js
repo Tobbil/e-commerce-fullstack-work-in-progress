@@ -29,7 +29,7 @@ export default function SeeProductBox(props) {
 
   return (
     <>
-      <main className={props.dimensions}>
+      <section className={props.dimensions}>
         <div className="grid grid-rows-4-0.1fr gap-6">
           <div className={`${overlineClass} ${opacity}`}>NEW PRODUCT</div>
           <h1 className={`text-h1 text-white font-bold uppercase leading-[58px] tracking-200`}>{headlineText}</h1>
@@ -42,7 +42,7 @@ export default function SeeProductBox(props) {
             </button>
           </a>
         </div>
-      </main>
+      </section>
     </>
   );
 }

@@ -4,7 +4,7 @@ import CategoryThumbnail from "../components/CategoryThumbnail";
 export default function Categories() {
   return (
     <>
-      <div className="w-screen justify-items-center">
+      <section className="w-screen justify-items-center">
         <div className="grid grid-cols-3 h-[284px] w-[1110px] mt-28 gap-6">
           <div>
             <CategoryThumbnail
@@ -40,7 +40,7 @@ export default function Categories() {
             />
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

@@ -5,7 +5,7 @@ export default function Header() {
   const menuHover = "hover:text-[#d87d4a] transition duration-200 ease-in-out";
   return (
     <>
-      <div className="m-0 w-screen bg-[#141414]">
+      <header className="m-0 w-screen bg-[#141414]">
         <div className="relative pt-[32px] pr-[165px] pb-[36px] pl-[165px] ">
           <div className="grid grid-cols-3 text-white h-[28px] content-center">
             <div className="justify-self-start self-center">
@@ -58,7 +58,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </header>
     </>
   );
 }
