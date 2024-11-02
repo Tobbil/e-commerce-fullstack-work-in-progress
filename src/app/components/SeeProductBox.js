@@ -5,14 +5,18 @@ export default function SeeProductBox(props) {
   const overlineClass = "text-fs-14 tracking-1000 leading-[19px]";
   const mainClass = `h-[${props.height}] w-[${props.width}]`;
   const paddingDesc = props.paddingDesc;
-
+  
   let btnColorClass;
+  let onHover;
+
   switch (props.btnColor) {
     case "black":
       btnColorClass = "bg-black";
+      onHover = "hover:bg-[#4C4C4C]"
       break;
     case "orange":
       btnColorClass = "bg-[#D87D4A]";
+      onHover = "hover:bg-[#FBAF85]"
   }
 
   let opacity = "";
@@ -32,7 +36,7 @@ export default function SeeProductBox(props) {
           <div className={`text-fs-15 text-white opacity-75 ${paddingDesc}`}>{descriptionText}</div>
           <a href="#">
             <button
-              className={`text-fs-13 font-semibold tracking-100 text-white h-[48px] w-[160px] mt-[1.5rem] ${btnColorClass}`}
+              className={`text-fs-13 font-semibold tracking-100 text-white h-[48px] w-[160px] mt-[1.5rem] ${btnColorClass} ${onHover}`}
             >
               SEE PRODUCT
             </button>
