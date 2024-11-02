@@ -19,7 +19,7 @@ export default function Categories() {
           </div>
           <div>
             <CategoryThumbnail
-              topValue="-top-[5rem]"
+              topValue="-top-[4.5rem]"
               div="center"
               categoryName="SPEAKERS"
               image="/categories_speaker.png"
