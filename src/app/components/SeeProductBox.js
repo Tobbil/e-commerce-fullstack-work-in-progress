@@ -3,7 +3,6 @@ export default function SeeProductBox(props) {
   const headlineText = props.headlineText;
   const descriptionText = props.descriptionText;
   const overlineClass = "text-fs-14 tracking-1000 leading-[19px]";
-  const mainClass = `h-[${props.height}] w-[${props.width}]`;
   const paddingDesc = props.paddingDesc;
   
   let btnColorClass;
@@ -25,7 +24,6 @@ export default function SeeProductBox(props) {
   } else if (!newProduct) {
     opacity = "opacity-0";
   }
-  console.log(mainClass);
 
   return (
     <>
