@@ -5,27 +5,29 @@ export default function Header() {
   const menuHover = "hover:text-[#d87d4a] transition duration-200 ease-in-out";
   return (
     <>
-      <header className="m-0 w-screen bg-[#141414]">
-        <div className="relative pt-[32px] pr-[165px] pb-[36px] pl-[165px] ">
-          <div className="grid grid-cols-3 text-white h-[28px] content-center">
+      <header className="m-0 w-screen bg-[#141414] justify-items-center">
+        <div className="relative pt-[2rem] pr-[10rem] pb-[2rem] pl-[10rem]">
+          <div className="grid grid-cols-3 text-white h-[2rem] content-center">
             <div className="justify-self-start self-center">
               <a href="#">
                 <Image src="/audiophile_text.png" alt="Audiophile logo" width={143} height={25} />
               </a>
             </div>
-            <div className="grid grid-cols-menu gap-4 text-fs-13 font-semibold tracking-200 justify-items-center items-center text-[#f2f2f2]">
-              <a className={`${menuHover} pl-[2rem]`} href="#">
-                HOME
-              </a>
-              <a className={menuHover} href="#">
-                HEADPHONES
-              </a>
-              <a className={`${menuHover} pl-[0.5rem]`} href="#">
-                SPEAKERS
-              </a>
-              <a className={menuHover} href="#">
-                EARPHONES
-              </a>
+            <div className="w-full flex justify-center">
+              <div className="grid grid-flow-col auto-cols-min gap-8 text-fs-13 font-semibold tracking-200 text-[#f2f2f2] content-center">
+                <a className={menuHover} href="#">
+                  HOME
+                </a>
+                <a className={menuHover} href="#">
+                  HEADPHONES
+                </a>
+                <a className={menuHover} href="#">
+                  SPEAKERS
+                </a>
+                <a className={menuHover} href="#">
+                  EARPHONES
+                </a>
+              </div>
             </div>
             <div className="justify-self-end self-center">
               <a href="#">
@@ -47,7 +49,7 @@ export default function Header() {
                 descriptionText="Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
               />
             </div>
-            <div className="h-[734px]">
+            <div className="relative h-[45rem]"> {/*734px*/}
               <Image
                 className="absolute"
                 src="/header_headphones.png"
