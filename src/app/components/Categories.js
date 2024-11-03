@@ -5,7 +5,7 @@ export default function Categories() {
   return (
     <>
       <section className="w-screen justify-items-center">
-        <div className="grid grid-cols-3 h-[284px] w-[1110px] mt-28 gap-6">
+        <div className="grid grid-cols-3 h-[20rem] w-[69rem] mt-28 gap-6">
           <div>
             <CategoryThumbnail
               topValue="-top-[5rem]"

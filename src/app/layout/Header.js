@@ -49,7 +49,7 @@ export default function Header() {
                 descriptionText="Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
               />
             </div>
-            <div className="relative h-[45rem]"> {/*734px*/}
+            <div className="relative h-[45rem]">
               <Image
                 className="absolute"
                 src="/header_headphones.png"
