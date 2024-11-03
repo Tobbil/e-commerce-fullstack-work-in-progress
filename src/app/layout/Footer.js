@@ -11,9 +11,9 @@ export default function Footer() {
             <Image className="pt-20" src="/audiophile_text.png" alt="Audiophile logo" width={143} height={25} />
           </a>
           <p className="text-fs15 text-white font-medium opacity-50 pt-10 w-[580px] justify-left">
-            Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound
+            Audiophile is an all in one stop to fulfill your audio needs. We&apos;re a small team of music lovers and sound
             specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo
-            facility - we're open 7 days a week.
+            facility - we&apos;re open 7 days a week.
           </p>
           <p className="text-fs15 text-white font-medium opacity-50 pt-12">Copyright 2021. All Rights Reserved</p>
         </div>
