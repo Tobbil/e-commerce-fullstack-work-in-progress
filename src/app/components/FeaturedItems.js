@@ -5,7 +5,7 @@ export default function FeaturedItems() {
   return (
     <>
       <section className="w-screen justify-items-center">
-        <div className="bg-featured-zx9 grid content-center grid-cols-2 h-[560px] w-[1110px] mt-32 gap-6">
+        <div className="bg-featured-zx9 grid content-center grid-cols-2 h-[35rem] w-[69rem] mt-32 gap-6">
           <div></div>
           <div className="flex items-center justify-center">
             <SeeProductBox

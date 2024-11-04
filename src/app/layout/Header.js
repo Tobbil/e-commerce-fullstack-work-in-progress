@@ -35,10 +35,10 @@ export default function Header() {
               </a>
             </div>
           </div>
-          <div className="mt-[36px] opacity-20 mb-[0.1em]">
+          <div className="mt-9 opacity-20 mb-[0.1em]">
             <hr />
           </div>
-          <div className="grid grid-cols-2 gap-[20px] overflow-hidden text-darkwhite">
+          <div className="grid grid-cols-2 gap-5 overflow-hidden text-darkwhite">
             <div className="flex items-center">
               <SeeProductBox
                 dimensions="h-400 w-400"

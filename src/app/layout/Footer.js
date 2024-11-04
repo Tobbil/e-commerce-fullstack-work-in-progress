@@ -18,7 +18,7 @@ export default function Footer() {
             </p>
             <p className="text-fs15 text-white font-medium opacity-50 pt-12">Copyright 2021. All Rights Reserved</p>
           </div>
-          <div className="w-[555px]">
+          <div className="w-[34rem]">
             <div className="grid grid-flow-col auto-cols-min gap-8 text-fs-13 font-semibold tracking-200 text-[#f2f2f2] pl-10 pt-20 justify-self-end">
               <a className={menuHover} href="#">
                 HOME
