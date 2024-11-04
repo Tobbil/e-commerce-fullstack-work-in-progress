@@ -2,7 +2,7 @@ export default function SeeProductBox(props) {
   const newProduct = props.newProduct;
   const headlineText = props.headlineText;
   const descriptionText = props.descriptionText;
-  const overlineClass = "text-fs-14 tracking-1000 leading-[19px]";
+  const overlineClass = "text-fs-14 tracking-1000 leading-[1.2rem]";
   const paddingDesc = props.paddingDesc;
   
   let btnColorClass;
@@ -30,11 +30,11 @@ export default function SeeProductBox(props) {
       <section className={props.dimensions}>
         <div className="grid grid-rows-4-0.1fr gap-6">
           <div className={`${overlineClass} ${opacity}`}>NEW PRODUCT</div>
-          <h1 className={`text-h1 text-white font-bold uppercase leading-[58px] tracking-200`}>{headlineText}</h1>
+          <h1 className={`text-h1 text-white font-bold uppercase leading-[3.6rem] tracking-200`}>{headlineText}</h1>
           <div className={`text-fs-15 text-white opacity-75 ${paddingDesc}`}>{descriptionText}</div>
           <a href="#">
             <button
-              className={`text-fs-13 font-semibold tracking-100 text-white h-[48px] w-[160px] mt-[1.5rem] ${btnColorClass} ${onHover}`}
+              className={`text-fs-13 font-semibold tracking-100 text-white h-12 w-40 mt-6 ${btnColorClass} ${onHover}`}
             >
               SEE PRODUCT
             </button>
