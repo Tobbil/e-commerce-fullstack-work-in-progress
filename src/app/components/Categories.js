@@ -4,7 +4,7 @@ import CategoryThumbnail from "../components/CategoryThumbnail";
 export default function Categories() {
   return (
     <>
-      <section className="w-screen justify-items-center">
+      <section className="self-center">
         <div className="grid grid-cols-3 h-[20rem] w-[69rem] mt-28 gap-6">
           <div>
             <CategoryThumbnail

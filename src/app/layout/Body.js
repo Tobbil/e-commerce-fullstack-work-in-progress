@@ -4,7 +4,7 @@ import FeaturedItems from "../components/FeaturedItems";
 export default function Body() {
   return (
     <>
-      <main>
+      <main className="flex flex-col">
         <Categories />
         <FeaturedItems />
       </main>
