@@ -5,20 +5,20 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="m-0 w-screen h-[23rem] bg-[#141414] justify-items-center">
-        <div className="grid grid-cols-2 justify-items-center relative w-[69rem]">
-          <div className="">
+      <footer className="m-0 w-screen h-[23rem] bg-[#141414] flex flex-col items-center mt-8">
+        <div className="grid grid-cols-2 relative w-[69rem]">
+          <div className="flex flex-col">
             <a href="#">
               <Image className="pt-20" src="/audiophile_text.png" alt="Audiophile logo" width={143} height={25} />
             </a>
-            <p className="text-fs15 text-white font-medium opacity-50 pt-10 justify-left">
+            <p className="text-fs15 text-white font-medium opacity-50 pt-10">
               Audiophile is an all in one stop to fulfill your audio needs. We&apos;re a small team of music lovers and
               sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our
               demo facility - we&apos;re open 7 days a week.
             </p>
             <p className="text-fs15 text-white font-medium opacity-50 pt-12">Copyright 2021. All Rights Reserved</p>
           </div>
-          <div className="w-[34rem]">
+          <div className="w-[34rem] flex flex-col items-end">
             <div className="grid grid-flow-col auto-cols-min gap-8 text-fs-13 font-semibold tracking-200 text-[#f2f2f2] pl-10 pt-20 justify-self-end">
               <a className={menuHover} href="#">
                 HOME
@@ -33,7 +33,7 @@ export default function Footer() {
                 EARPHONES
               </a>
             </div>
-            <div className="grid grid-flow-col gap-4 text-fs-13 font-semibold tracking-200 text-[#f2f2f2] pl-10 pt-20 justify-self-end">
+            <div className="grid grid-flow-col gap-4 text-fs-13 font-semibold tracking-200 auto-cols-min text-[#f2f2f2] pl-10 pt-20">
               <div>
                 <a className={menuHover} href="https://www.facebook.com">
                   <svg
