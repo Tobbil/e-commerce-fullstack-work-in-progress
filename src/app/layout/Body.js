@@ -1,12 +1,14 @@
 import Categories from "../components/Categories";
-import FeaturedItems from "../components/FeaturedItems";
+import FeaturedItemBright from "../components/FeaturedItemBright";
+import FeaturedItemGrey from "../components/FeaturedItemGrey"
 
 export default function Body() {
   return (
     <>
       <main className="flex flex-col">
         <Categories />
-        <FeaturedItems />
+        <FeaturedItemBright />
+        <FeaturedItemGrey />
       </main>
     </>
   );

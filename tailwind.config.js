@@ -33,6 +33,7 @@ module.exports = {
       },
       backgroundImage: {
         "featured-zx9": "url('/FeaturedBigZX9.png')",
+        "featured-zx7-grey": "url('/FeaturedZX7Grey.png')",
         "categories-shadow": "url('/CategoriesShadowBG.png')"
       },
       height: {
