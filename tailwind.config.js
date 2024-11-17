@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontSize: {
         "h1": "56px",
+        "h2": "28px",
         "fs-13": "13px",
         "fs-14": "14px",
         "fs-15": "15px",
@@ -29,6 +30,7 @@ module.exports = {
       },
       colors: {
         darkwhite: "#f2f2f2",
+        grey: "#f1f1f1",
         orange: "#D87D4A"
       },
       backgroundImage: {

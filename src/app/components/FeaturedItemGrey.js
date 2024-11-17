@@ -1,7 +1,7 @@
 import "tailwindcss/tailwind.css";
-import SeeProductBoxNoDesc from "./SeeProductBoxNoDesc";
+import SeeProductBoxNoDesc from "./SeeProductBoxGreyNoDesc";
 
-export default function FeaturedItems() {
+export default function FeaturedItemGrey() {
   return (
     <>
       <section className="self-center">
@@ -11,7 +11,6 @@ export default function FeaturedItems() {
               dimensions="h-300 w-350"
               paddingDesc="pr-4"
               newProduct={false}
-              btnColor="black"
               headlineText="ZX7 SPEAKER"
               descriptionText=""
             />
