@@ -1,6 +1,7 @@
 import Categories from "../components/Categories";
 import FeaturedItemBright from "../components/FeaturedItemBright";
-import FeaturedItemGrey from "../components/FeaturedItemGrey"
+import FeaturedItemGrey from "../components/FeaturedItemGrey";
+import FeaturedItemGrey2Cols from "../components/FeaturedItemGrey2Cols"
 
 export default function Body() {
   return (
@@ -9,6 +10,7 @@ export default function Body() {
         <Categories />
         <FeaturedItemBright />
         <FeaturedItemGrey />
+        <FeaturedItemGrey2Cols />
       </main>
     </>
   );

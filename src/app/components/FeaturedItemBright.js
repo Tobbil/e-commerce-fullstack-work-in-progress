@@ -1,7 +1,7 @@
 import "tailwindcss/tailwind.css";
 import SeeProductBox from "./SeeProductBox";
 
-export default function FeaturedItems() {
+export default function FeaturedItemBright() {
   return (
     <>
       <section className="self-center">
