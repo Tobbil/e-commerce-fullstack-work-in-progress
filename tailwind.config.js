@@ -11,6 +11,7 @@ module.exports = {
         "fs-14": "14px",
         "fs-15": "15px",
         "fs-18": "18px",
+        "fs-40": "40px",
       },
       fontWeight: {
         "fw-600": "600", 
