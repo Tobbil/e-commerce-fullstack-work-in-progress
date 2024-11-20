@@ -13,6 +13,7 @@ export default function FeaturedItemBright() {
               paddingDesc="pr-4"
               newProduct={false}
               btnColor="black"
+              txtColor="white"
               headlineText="ZX9 SPEAKER"
               descriptionText="Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
             />
