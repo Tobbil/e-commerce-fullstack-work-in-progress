@@ -23,7 +23,7 @@ export default function CategoryItem(props) {
                 newProductFontColor="orange"
                 btnColor="orange"
                 txtColor="black"
-                headlineText="ZX9 SPEAKER"
+                headlineText={props.headlineText}
                 descriptionText="Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
               />
             )}
@@ -43,7 +43,7 @@ export default function CategoryItem(props) {
                 newProductFontColor="orange"
                 btnColor="orange"
                 txtColor="black"
-                headlineText="ZX9 SPEAKER"
+                headlineText={props.headlineText}
                 descriptionText="Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
               />
             )}

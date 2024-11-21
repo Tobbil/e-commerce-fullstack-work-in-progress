@@ -21,6 +21,9 @@ export default function Headphones() {
           imageAlt="black XX99 MKII headphones"
           imageWidth={540}
           imageHeight={560}
+          headlineText="XX99 Mark II Headphones"
+          descriptionText="The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound."
+          productLink=""
         />
         <Categories />
       </Body>
