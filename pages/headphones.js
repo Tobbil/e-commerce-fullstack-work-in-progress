@@ -15,6 +15,7 @@ export default function Headphones() {
       </Header>
       <Body>
         <CategoryItem
+          newItem={true}
           imagePosition="left"
           imageSrc="/XX99MKIIHeadphones.png"
           imageAlt="black XX99 MKII headphones"

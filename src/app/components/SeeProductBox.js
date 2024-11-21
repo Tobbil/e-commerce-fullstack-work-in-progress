@@ -7,7 +7,12 @@ export default function SeeProductBox(props) {
 
   let btnColorClass;
   let txtColorClass;
+  let newProductFontColorClass =
+    props.newProductFontColor === "black" ? "text-black" : "text-orange";
   let onHover;
+  let newProductOpacity = "";
+  let gridClass = "grid grid-rows-4-0.1fr gap-6";
+  let width = props.width ? props.width : "w-[21rem]";
 
   switch (props.btnColor) {
     case "black":
@@ -27,24 +32,28 @@ export default function SeeProductBox(props) {
       txtColorClass = "text-white";
   }
 
-  let opacity = "";
   if (newProduct) {
-    opacity = "opacity-50";
+    newProductOpacity = "opacity-50";
   } else if (!newProduct) {
-    opacity = "opacity-0";
+    newProductOpacity = "hidden";
+    gridClass = "grid grid-rows-3-0.1fr gap-6";
   }
 
   return (
     <>
-      <section className={props.dimensions}>
-        <div className="grid grid-rows-4-0.1fr gap-6">
-          <div className={`${overlineClass} ${opacity}`}>NEW PRODUCT</div>
+      <section className={width}>
+        <div className={gridClass}>
+          <div className={`${overlineClass} ${newProductOpacity} ${newProductFontColorClass}`}>
+            NEW PRODUCT
+          </div>
           <h1
             className={`text-h1 ${txtColorClass} font-bold uppercase leading-[3.6rem] tracking-200`}
           >
             {headlineText}
           </h1>
-          <div className={`text-fs-15 ${txtColorClass} opacity-75 ${paddingDesc}`}>
+          <div
+            className={`text-fs-15 ${txtColorClass} opacity-75 ${paddingDesc}`}
+          >
             {descriptionText}
           </div>
           <a href="#">

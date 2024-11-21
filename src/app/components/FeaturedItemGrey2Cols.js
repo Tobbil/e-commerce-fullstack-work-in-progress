@@ -12,7 +12,6 @@ export default function FeaturedItemGrey2Cols() {
         </div>
           <div className="bg-grey flex items-center justify-center pb-4">
             <SeeProductBoxNoDesc
-              dimensions="h-300 w-350"
               paddingDesc="pr-4"
               newProduct={false}
               headlineText="YX1 EARPHONES"

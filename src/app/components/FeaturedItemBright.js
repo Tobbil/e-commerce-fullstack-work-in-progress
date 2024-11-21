@@ -9,7 +9,6 @@ export default function FeaturedItemBright() {
           <div></div>
           <div className="flex items-center justify-center">
             <SeeProductBox
-              dimensions="h-350 w-350"
               paddingDesc="pr-4"
               newProduct={false}
               btnColor="black"

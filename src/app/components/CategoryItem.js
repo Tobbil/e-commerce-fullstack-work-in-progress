@@ -18,9 +18,9 @@ export default function CategoryItem(props) {
               />
             ) : (
               <SeeProductBox
-                dimensions="h-350 w-350"
                 paddingDesc="pr-4"
-                newProduct={false}
+                newProduct={props.newItem}
+                newProductFontColor="orange"
                 btnColor="orange"
                 txtColor="black"
                 headlineText="ZX9 SPEAKER"
@@ -28,7 +28,7 @@ export default function CategoryItem(props) {
               />
             )}
           </div>
-          <div>
+          <div className="flex flex-col items-center justify-center">
             {imagePosition === "right" ? (
               <Image
                 src={props.imageSrc}
@@ -38,9 +38,9 @@ export default function CategoryItem(props) {
               />
             ) : (
               <SeeProductBox
-                dimensions="h-350 w-350"
                 paddingDesc="pr-4"
-                newProduct={false}
+                newProduct={props.newItem}
+                newProductFontColor="orange"
                 btnColor="orange"
                 txtColor="black"
                 headlineText="ZX9 SPEAKER"
