@@ -18,7 +18,8 @@ module.exports = {
       },
       gridTemplateRows: {
         "categories": "repeat(4, 0.3fr)",
-        "4-0.1fr": "repeat(4, 0.1fr)"
+        "4-0.1fr": "repeat(4, 0.1fr)",
+        "3-0.1fr": "repeat(3, 0.1fr)"
       },
       gridTemplateColumns: {
         "menu": "repeat(4, 1fr)"

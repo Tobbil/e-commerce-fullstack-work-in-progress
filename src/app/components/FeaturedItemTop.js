@@ -6,7 +6,7 @@ export default function FeaturedItemTop() {
     <div className="grid grid-cols-2 gap-5 overflow-hidden text-darkwhite">
       <div className="flex items-center">
         <SeeProductBox
-          dimensions="h-400 w-400"
+          width="w-[25rem]"
           paddingDesc="pr-16"
           newProduct={true}
           btnColor="orange"
