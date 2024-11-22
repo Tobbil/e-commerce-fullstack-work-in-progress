@@ -18,7 +18,7 @@ export default function Headphones() {
         <CategoryItem
           newItem={true}
           imagePosition="left"
-          imageSrc="/XX99MKIIHeadphones.png"
+          imageSrc="/XX99-MKII-Headphones.png"
           imageAlt="black XX99 MKII headphones"
           imageWidth={540}
           imageHeight={560}
@@ -29,7 +29,7 @@ export default function Headphones() {
         <CategoryItem
           newItem={false}
           imagePosition="right"
-          imageSrc="/XX99MKIHeadphones.png"
+          imageSrc="/XX99-MKI-Headphones.png"
           imageAlt="black XX99 MKI headphones"
           imageWidth={540}
           imageHeight={560}
@@ -40,7 +40,7 @@ export default function Headphones() {
         <CategoryItem
           newItem={false}
           imagePosition="left"
-          imageSrc="/XX59Headphones.png"
+          imageSrc="/XX59-Headphones.png"
           imageAlt="white XX59 headphones"
           imageWidth={540}
           imageHeight={560}
