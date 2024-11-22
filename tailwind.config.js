@@ -25,10 +25,11 @@ module.exports = {
         "menu": "repeat(4, 1fr)"
       },
       letterSpacing: {
-        100: "1px",
-        129: "1.29px",
-        200: "2px",
-        1000: "10px",
+        "100": "1px",
+        "129": "1.29px",
+        "143": "1.43px",
+        "200": "2px",
+        "1000": "10px",
       },
       colors: {
         darkwhite: "#f2f2f2",

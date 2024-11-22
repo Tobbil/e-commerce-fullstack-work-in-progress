@@ -7,8 +7,8 @@ export default function CategoryItem(props) {
   return (
     <>
       <section className="self-center">
-        <div className="grid justify-center grid-cols-2 h-[35rem] w-[69rem] mt-32 mb-32 gap-6">
-          <div className="flex flex-col">
+        <div className="grid justify-center grid-cols-2 h-[35rem] w-[69rem] mt-16 mb-16 gap-6">
+          <div className="flex flex-col items-center justify-center">
             {imagePosition === "left" ? (
               <Image
                 src={props.imageSrc}
@@ -24,7 +24,7 @@ export default function CategoryItem(props) {
                 btnColor="orange"
                 txtColor="black"
                 headlineText={props.headlineText}
-                descriptionText="Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
+                descriptionText={props.descriptionText}
               />
             )}
           </div>
@@ -44,7 +44,7 @@ export default function CategoryItem(props) {
                 btnColor="orange"
                 txtColor="black"
                 headlineText={props.headlineText}
-                descriptionText="Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
+                descriptionText={props.descriptionText}
               />
             )}
           </div>

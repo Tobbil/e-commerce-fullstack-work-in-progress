@@ -5,7 +5,7 @@ export default function Categories() {
   return (
     <>
       <section className="self-center">
-        <div className="grid grid-cols-3 h-[20rem] w-[69rem] mt-28 gap-6">
+        <div className="grid grid-cols-3 h-[20rem] w-[69rem] mt-20 gap-6">
           <div className="flex content-center">
             <CategoryThumbnail
               topValue="-top-[5rem]"

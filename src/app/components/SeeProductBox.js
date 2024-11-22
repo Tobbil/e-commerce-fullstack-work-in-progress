@@ -8,7 +8,7 @@ export default function SeeProductBox(props) {
   let btnColorClass;
   let txtColorClass;
   let newProductFontColorClass =
-    props.newProductFontColor === "black" ? "text-black" : "text-orange";
+    props.newProductFontColor === "white" ? "text-white" : "text-orange";
   let onHover;
   let newProductOpacity = "";
   let gridClass = "grid grid-rows-4-0.1fr gap-6";

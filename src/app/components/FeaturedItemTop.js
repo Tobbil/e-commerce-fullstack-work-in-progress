@@ -3,12 +3,13 @@ import SeeProductBox from "../components/SeeProductBox";
 
 export default function FeaturedItemTop() {
   return (
-    <div className="grid grid-cols-2 gap-5 overflow-hidden text-darkwhite">
+    <div className="grid grid-cols-2 gap-5 overflow-hidden text-darkwhite mb-14">
       <div className="flex items-center">
         <SeeProductBox
           width="w-[25rem]"
           paddingDesc="pr-16"
           newProduct={true}
+          newProductFontColor="white"
           btnColor="orange"
           txtColor="white"
           headlineText="XX99 MARK II HEADPHONES"
