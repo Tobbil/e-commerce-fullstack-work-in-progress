@@ -16,6 +16,7 @@ export default function FeaturedItemGrey2Cols() {
               newProduct={false}
               headlineText="YX1 EARPHONES"
               descriptionText=""
+              productId={6}
             />
           </div>
         </div>

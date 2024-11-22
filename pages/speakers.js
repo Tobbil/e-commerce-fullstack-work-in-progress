@@ -24,7 +24,7 @@ export default function Speakers() {
           imageHeight={560}
           headlineText="ZX9 Speaker"
           descriptionText="Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups."
-          productLink=""
+          productId={4}
         />
         <CategoryItem
           newItem={false}
@@ -35,7 +35,7 @@ export default function Speakers() {
           imageHeight={560}
           headlineText="ZX7 Speaker"
           descriptionText="Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use."
-          productLink=""
+          productId={5}
         />
         <Categories />
         <TextWithPhoto2Cols

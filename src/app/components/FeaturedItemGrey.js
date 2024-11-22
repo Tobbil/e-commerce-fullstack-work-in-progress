@@ -12,6 +12,7 @@ export default function FeaturedItemGrey() {
               newProduct={false}
               headlineText="ZX7 SPEAKER"
               descriptionText=""
+              productId={5}
             />
           <div></div>
           </div>

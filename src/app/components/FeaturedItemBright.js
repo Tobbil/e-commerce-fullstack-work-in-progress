@@ -15,6 +15,7 @@ export default function FeaturedItemBright() {
               txtColor="white"
               headlineText="ZX9 SPEAKER"
               descriptionText="Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
+              productId={4}
             />
           </div>
         </div>

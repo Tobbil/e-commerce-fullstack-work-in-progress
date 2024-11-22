@@ -15,6 +15,7 @@ export default function Categories() {
               alt="small headphones"
               width={122.95}
               height={160}
+              categoryUrl="/headphones"
             />
           </div>
           <div>
@@ -26,6 +27,7 @@ export default function Categories() {
               alt="small speaker"
               width={121.49}
               height={146}
+              categoryUrl="/speakers"
             />
           </div>
           <div>
@@ -37,6 +39,7 @@ export default function Categories() {
               alt="small speaker"
               width={125}
               height={126}
+              categoryUrl="/earphones"
             />
           </div>
         </div>

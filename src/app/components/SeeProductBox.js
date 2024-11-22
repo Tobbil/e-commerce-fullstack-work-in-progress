@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SeeProductBox(props) {
   const newProduct = props.newProduct;
   const headlineText = props.headlineText;
@@ -32,7 +34,7 @@ export default function SeeProductBox(props) {
       txtColorClass = "text-white";
   }
 
-  if (newProduct) {
+  if (newProduct && props.newProductFontColor === "white") {
     newProductOpacity = "opacity-50";
   } else if (!newProduct) {
     newProductOpacity = "hidden";
@@ -56,13 +58,13 @@ export default function SeeProductBox(props) {
           >
             {descriptionText}
           </div>
-          <a href="#">
+          <Link href={`/item/${props.productId}`}>
             <button
               className={`text-fs-13 font-semibold tracking-100 text-white h-12 w-40 mt-6 ${btnColorClass} ${onHover}`}
             >
               SEE PRODUCT
             </button>
-          </a>
+          </Link>
         </div>
       </section>
     </>
