@@ -7,7 +7,7 @@ import Categories from "@/app/components/Categories";
 import CategoryItem from "@/app/components/CategoryItem";
 import TextWithPhoto2Cols from "@/app/components/TextWithPhoto2Cols";
 
-export default function Headphones() {
+export default function Speakers() {
   return (
     <>
       <Header>

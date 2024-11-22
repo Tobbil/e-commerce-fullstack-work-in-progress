@@ -1,4 +1,4 @@
-export default function SeeProductBox(props) {
+export default function SeeProductBoxGreyNoDesc(props) {
   const newProduct = props.newProduct;
   const headlineText = props.headlineText;
   const descriptionText = props.descriptionText;
