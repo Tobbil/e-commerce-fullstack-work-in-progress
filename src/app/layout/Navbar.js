@@ -35,14 +35,14 @@ export default function Navbar() {
             </div>
           </div>
           <div className="justify-self-end self-center">
-            <a href="#">
+            <Link href="/cart">
               <Image
                 src="/basket_icon.png"
                 alt="Basket icon"
                 width={23.33}
                 height={20}
               />
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
