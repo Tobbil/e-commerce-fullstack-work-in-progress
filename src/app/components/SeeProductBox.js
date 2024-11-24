@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function SeeProductBox(props) {
-  const newProduct = props.newProduct;
+  const newProduct = props.newProduct; // ZMIEN TO WSZYSTKO ZEBY BYLO BRANE Z ITEMA Z PROPSOW
   const headlineText = props.headlineText;
   const descriptionText = props.descriptionText;
   const overlineClass = "text-fs-14 tracking-1000 leading-[1.2rem]";

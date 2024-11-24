@@ -16,11 +16,13 @@ export default function FeaturedItemFirst(props) {
     }
     getItem();
   }, [props.itemId]);
-  console.log(item)
 
-  if (!item) { // Show black div until data is fetched from database
+  if (!item) {
+    // Show empty div until data is fetched from database
     return (
-      <div className="bg-white h-[35rem] w-[69rem]">Loading...</div>
+      <section className="self-center">
+        <div className="bg-white h-[35rem] w-[69rem]">Loading...</div>
+      </section>
     );
   }
 
