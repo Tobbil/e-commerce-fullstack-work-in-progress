@@ -46,6 +46,7 @@ export default function CategoryItem(props) {
                 btnColor="orange"
                 txtColor="black"
                 headlineText={props.headlineText}
+                descriptionText={props.descriptionText}
                 productId={props.productId}
                 categoryUrl={props.categoryUrl}
               />
