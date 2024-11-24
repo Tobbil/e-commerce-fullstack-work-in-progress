@@ -1,8 +1,25 @@
 import "tailwindcss/tailwind.css";
 import Image from "next/image";
 import SeeProductBox from "./SeeProductBox";
+import { useEffect, useState } from "react";
 
 export default function CategoryItem(props) {
+  const [item, setItem] = useState(null);
+  console.log(props);
+  useEffect(() => {
+    async function getItem() {
+      try {
+        const response = await fetch(`/api/item?id=${props.itemId}`);
+        const item = await response.json();
+        setItem(item[0]);
+      } catch (error) {
+        console.error("Error fetching item!");
+      }
+    }
+    getItem();
+    console.log(item);
+  }, []);
+
   const imagePosition = props.imagePosition;
   return (
     <>
@@ -11,44 +28,42 @@ export default function CategoryItem(props) {
           <div className="flex flex-col items-center justify-center">
             {imagePosition === "left" ? (
               <Image
-                src={props.imageSrc}
-                alt={props.imageAlt}
-                width={props.imageWidth}
+                src={item?.image || ""}
+                alt={item?.imageAltTxt || ""}
+                width={props.imageWidth} // ZMIENIC JAKOS NA WYMIARY OBRAZU
                 height={props.imageHeight}
               />
             ) : (
               <SeeProductBox
                 paddingDesc="pr-4"
-                newProduct={props.newItem}
+                newProduct={item?.newProduct || null}
                 newProductFontColor="orange"
                 btnColor="orange"
                 txtColor="black"
-                headlineText={props.headlineText}
-                descriptionText={props.descriptionText}
-                productId={props.productId}
-                categoryUrl={props.categoryUrl}
+                headlineText={item?.name || ""}
+                descriptionText={item?.description || ""}
+                itemId={props.itemId}
               />
             )}
           </div>
           <div className="flex flex-col items-center justify-center">
             {imagePosition === "right" ? (
               <Image
-                src={props.imageSrc}
-                alt={props.imageAlt}
-                width={props.imageWidth}
+                src={item?.image || ""}
+                alt={item?.imageAltTxt || ""}
+                width={props.imageWidth} // ZMIENIC JAKOS NA WYMIARY OBRAZU
                 height={props.imageHeight}
               />
             ) : (
               <SeeProductBox
                 paddingDesc="pr-4"
-                newProduct={props.newItem}
+                newProduct={item?.newProduct || null}
                 newProductFontColor="orange"
                 btnColor="orange"
                 txtColor="black"
-                headlineText={props.headlineText}
-                descriptionText={props.descriptionText}
-                productId={props.productId}
-                categoryUrl={props.categoryUrl}
+                headlineText={item?.name || ""}
+                descriptionText={item?.description || ""}
+                itemId={props.itemId}
               />
             )}
           </div>

@@ -58,7 +58,7 @@ export default function SeeProductBox(props) {
           >
             {descriptionText}
           </div>
-          <Link href={`/item/${props.productId}`}>
+          <Link href={`/item/${props.itemId}`}>
             <button
               className={`text-fs-13 font-semibold tracking-100 text-white h-12 w-40 mt-6 ${btnColorClass} ${onHover}`}
             >

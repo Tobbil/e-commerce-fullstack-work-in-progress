@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Header>
         <Navbar />
-        <FeaturedItemTop itemId={1}/>
+        <FeaturedItemTop itemId={1} />
       </Header>
       <Body>
         <Categories />

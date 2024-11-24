@@ -1,6 +1,5 @@
 import Image from "next/image";
 import SeeProductBox from "../components/SeeProductBox";
-import React from "react";
 import { useState, useEffect } from "react";
 
 export default function FeaturedItemTop(props) {
@@ -16,7 +15,6 @@ export default function FeaturedItemTop(props) {
       }
     }
     getItem();
-    console.log(item);
   }, []);
 
   return (
@@ -25,19 +23,20 @@ export default function FeaturedItemTop(props) {
         <SeeProductBox
           width="w-[25rem]"
           paddingDesc="pr-16"
-          newProduct={item.newProduct}
+          newProduct={item?.newProduct || ""}
           newProductFontColor="white"
           btnColor="orange"
           txtColor="white"
-          headlineText={item.name}
-          descriptionText={item.description}
+          headlineText={item?.name || ""}
+          descriptionText={item?.description || ""}
+          itemId={1}
         />
       </div>
       <div className="relative h-[45rem]">
         <Image
           className="absolute"
           src="/header_headphones.png"
-          alt="black heapdhones"
+          alt={item?.imageAltTxt || ""}
           layout="responsive"
           width={1}
           height={1}
