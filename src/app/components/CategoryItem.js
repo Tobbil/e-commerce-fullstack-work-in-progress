@@ -18,7 +18,7 @@ export default function CategoryItem(props) {
     }
     getItem();
     console.log(item);
-  }, []);
+  }, [props.itemId]);
 
   const imagePosition = props.imagePosition;
   return (

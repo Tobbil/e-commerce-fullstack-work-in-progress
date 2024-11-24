@@ -15,7 +15,7 @@ export default function FeaturedItemTop(props) {
       }
     }
     getItem();
-  }, []);
+  }, [props.itemId]);
 
   return (
     <div className="grid grid-cols-2 gap-5 overflow-hidden text-darkwhite mb-14">
