@@ -17,20 +17,14 @@ export default function Headphones() {
       <Body>
         <CategoryItem
           imagePosition="left"
-          imageWidth={540}
-          imageHeight={560}
           itemId={1}
         />
         <CategoryItem
           imagePosition="right"
-          imageWidth={540}
-          imageHeight={560}
           itemId={2}
         />
         <CategoryItem
           imagePosition="left"
-          imageWidth={540}
-          imageHeight={560}
           itemId={3}
         />
         <Categories />

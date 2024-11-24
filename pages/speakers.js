@@ -16,26 +16,12 @@ export default function Speakers() {
       </Header>
       <Body>
         <CategoryItem
-          newItem={true}
           imagePosition="left"
-          imageSrc="/ZX9-Speaker.png"
-          imageAlt="black ZX9 speaker"
-          imageWidth={540}
-          imageHeight={560}
-          headlineText="ZX9 Speaker"
-          descriptionText="Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups."
-          productId={4}
+          itemId={4}
         />
         <CategoryItem
-          newItem={false}
           imagePosition="right"
-          imageSrc="/ZX7-Speaker.png"
-          imageAlt="black ZX7 speaker"
-          imageWidth={540}
-          imageHeight={560}
-          headlineText="ZX7 Speaker"
-          descriptionText="Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use."
-          productId={5}
+          itemId={5}
         />
         <Categories />
         <TextWithPhoto2Cols

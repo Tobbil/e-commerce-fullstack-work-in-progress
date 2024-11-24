@@ -30,8 +30,8 @@ export default function CategoryItem(props) {
               <Image
                 src={item?.image || ""}
                 alt={item?.imageAltTxt || ""}
-                width={props.imageWidth} // ZMIENIC JAKOS NA WYMIARY OBRAZU
-                height={props.imageHeight}
+                width={540}
+                height={560}
               />
             ) : (
               <SeeProductBox
@@ -51,8 +51,8 @@ export default function CategoryItem(props) {
               <Image
                 src={item?.image || ""}
                 alt={item?.imageAltTxt || ""}
-                width={props.imageWidth} // ZMIENIC JAKOS NA WYMIARY OBRAZU
-                height={props.imageHeight}
+                width={540}
+                height={560}
               />
             ) : (
               <SeeProductBox

@@ -3,9 +3,9 @@ import Body from "@/app/layout/Body.js";
 import Footer from "@/app/layout/Footer.js";
 import Navbar from "@/app/layout/Navbar.js";
 import FeaturedItemTop from "@/app/components/FeaturedItemTop.js";
-import FeaturedItemBright from "@/app/components/FeaturedItemBright";
 import FeaturedItemGrey from "@/app/components/FeaturedItemGrey";
 import FeaturedItemGrey2Cols from "@/app/components/FeaturedItemGrey2Cols";
+import FeaturedItemFirst from "@/app/components/FeaturedItemFirst";
 import Categories from "@/app/components/Categories";
 import TextWithPhoto2Cols from "@/app/components/TextWithPhoto2Cols";
 
@@ -18,7 +18,7 @@ export default function Home() {
       </Header>
       <Body>
         <Categories />
-        <FeaturedItemBright />
+        <FeaturedItemFirst itemId={4}/>
         <FeaturedItemGrey />
         <FeaturedItemGrey2Cols />
         <TextWithPhoto2Cols
