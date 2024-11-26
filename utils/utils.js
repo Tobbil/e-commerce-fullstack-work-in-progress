@@ -32,3 +32,10 @@ export async function getItemFromDB(id) {
   }, []);
   return item;
 }
+
+export function convertPrice(price) {
+    // TODO: Wez pod uwage ceny nizsze niz 1000 albo rowne, np. z 4500 robi sie 4,5
+    const priceFloat = price / 1000
+    const priceWithComma = String(priceFloat).replace(".", ",")
+    return priceWithComma
+}
