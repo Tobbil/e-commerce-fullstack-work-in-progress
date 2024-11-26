@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { useState } from "react";
+import { convertPrice } from "../../../utils/utils";
 
-export default function SeeProductBox(props) {
+export default function AddToCartBox(props) {
   const newProduct = props.newProduct; // ZMIEN TO WSZYSTKO ZEBY BYLO BRANE Z ITEMA Z PROPSOW
   const headlineText = props.headlineText;
   const descriptionText = props.descriptionText;
@@ -39,8 +39,20 @@ export default function SeeProductBox(props) {
     newProductOpacity = "opacity-50";
   } else if (!newProduct) {
     newProductOpacity = "hidden";
-    gridClass = "grid grid-rows-3-0.1fr gap-6";
+    gridClass = "grid grid-rows-5-0.1fr gap-6";
   }
+
+  const [quantity, setQuantity] = useState(1);
+
+  const handleChange = (e) => {
+    const value = Math.max(1, Math.min(100, Number(e.target.value))); // Limit between 1 and 100
+    setQuantity(value);
+  };
+
+  const handleAddToCart = () => {
+    console.log("IMPLEMENT ADDING TO CART"); // Pass the quantity to parent or cart logic
+    console.log(`TESTING IF QUANTITY IS PASSED: ${quantity}`);
+  };
 
   return (
     <>
@@ -61,13 +73,28 @@ export default function SeeProductBox(props) {
           >
             {descriptionText}
           </div>
-          <Link href={`/item/${props.itemId}`}>
+          <div className="font-semibold text-fs-18 tracking-129">
+            $ {convertPrice(props.price)}
+          </div>
+          <div className="flex flex-row gap-6">
+            <label htmlFor="quantity" className="w-40 h-12 self-end">
+              <input
+                className="w-40 h-12 text-center bg-[#f1f1f1]"
+                id="quantity"
+                type="number"
+                min="1"
+                max="100"
+                value={quantity}
+                onChange={handleChange}
+              />
+            </label>
             <button
+              onClick={handleAddToCart}
               className={`text-fs-13 font-semibold tracking-100 text-white h-12 w-40 mt-6 ${btnColorClass} ${onHover}`}
             >
-              SEE PRODUCT
+              ADD TO CART
             </button>
-          </Link>
+          </div>
         </div>
       </section>
     </>
