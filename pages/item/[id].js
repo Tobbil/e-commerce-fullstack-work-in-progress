@@ -32,7 +32,6 @@ export default function ItemPage() {
   console.log(item);
   if (!item) return <div>Item not found</div>;
 
-
   return (
     <>
       <Header>
@@ -40,9 +39,13 @@ export default function ItemPage() {
       </Header>
       <Body>
         <div className="self-center w-[69rem] mt-16">
-          <span onClick={() => router.back()} className="text-black opacity-50">
+          <span
+            onClick={() => router.back()}
+            className="text-black opacity-50"
+            style={{ cursor: "pointer" }}
+          >
             Go Back
-            </span>
+          </span>
         </div>
         <Item2Cols imagePosition="left" addToCart={true} itemId={id} />
         <Categories />
