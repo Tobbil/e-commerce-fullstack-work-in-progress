@@ -24,7 +24,7 @@ export default function FeaturedItemTop(props) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-5 overflow-hidden text-darkwhite mb-14">
+    <div className="flex flex-cols gap-5 overflow-hidden text-darkwhite mb-14 h-[41rem]">
       <div className="flex items-center">
         <SeeProductBox
           width="w-[25rem]"
@@ -38,14 +38,13 @@ export default function FeaturedItemTop(props) {
           itemId={1}
         />
       </div>
-      <div className="relative h-[45rem]">
+      <div className="relative flex-shrink-0 bottom-20 overflow-hidden scroll-">
         <Image
-          className="absolute"
+        className="bottom-50"
           src={"/header_headphones.png"}
-          alt={item?.imageAltTxt || ""}
-          layout="responsive"
-          width={1}
-          height={1}
+          alt={"black headphones"}
+          width={710}
+          height={729}
         />
       </div>
     </div>
