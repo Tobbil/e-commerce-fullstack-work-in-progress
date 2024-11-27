@@ -19,14 +19,14 @@ export default function Home() {
       <Body>
         <Categories />
         <FeaturedItemFirst itemId={4}/>
-        <FeaturedItemGrey itemId={5}/>
+        {/* <FeaturedItemGrey itemId={5}/>
         <FeaturedItemGrey2Cols itemId={6}/>
         <TextWithPhoto2Cols
           headlineText="BRINGING YOU THE BEST AUDIO GEAR"
           highlightIndex={3}
-        />
+        />*/}
       </Body>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

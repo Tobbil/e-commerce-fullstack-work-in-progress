@@ -1,9 +1,9 @@
 export default function Header(props) {
   return (
     <>
-      <header className="m-0 w-screen bg-[#141414]">
-        <div className="relative pt-[2rem] pr-[10rem] pl-[10rem]">
-        {props.children}
+      <header className="w-screen flex flex-col bg-[#141414] items-center">
+        <div className="pt-[2rem]">
+          {props.children}
         </div>
       </header>
     </>

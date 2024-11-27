@@ -7,8 +7,16 @@ export default function Navbar() {
   return (
     <>
       <nav>
-        <div className="grid grid-cols-3 text-white h-[2rem] content-center">
-          <div className="justify-self-start self-center">
+        <div className="grid grid-cols-navbar-mobile lg:grid-cols-3 text-white h-[2rem] items-center justify-items-start pr-16 pl-16 lg:pr-40 lg:pl-40">
+          <div className="lg:hidden col-start-auto">
+            <Image
+              src="/menu_icon.png"
+              alt="menu icon"
+              width={16}
+              height={15}
+            />
+          </div>
+          <div className="col-start-2 lg:col-start-1 justify-self-center md:justify-self-start">
             <Link href="/">
               <Image
                 src="/audiophile_text.png"
@@ -18,8 +26,8 @@ export default function Navbar() {
               />
             </Link>
           </div>
-          <div className="w-full flex justify-center">
-            <div className="grid grid-flow-col auto-cols-min gap-8 text-fs-13 font-semibold tracking-200 text-[#f2f2f2] content-center">
+          <div className="hidden xl:w-full lg:flex lg:justify-center">
+            <div className="grid grid-flow-col auto-cols-min gap-4 xl:gap-8 text-fs-13 font-semibold tracking-200 text-[#f2f2f2] content-center">
               <Link className={menuHover} href="/">
                 HOME
               </Link>
@@ -46,7 +54,7 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      <div className="mt-9 opacity-20 mb-[0.1em]">
+      <div className="mt-9 opacity-20 mb-[0.1em] pr-16 pl-16 lg:pr-40 lg:pl-40">
         <hr />
       </div>
     </>
