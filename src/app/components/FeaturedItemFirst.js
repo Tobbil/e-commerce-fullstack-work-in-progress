@@ -31,7 +31,7 @@ export default function FeaturedItemFirst(props) {
       <section className="self-center">
         <div className="bg-featured-first-mobile md:bg-[url('/FeaturedFirstBgTablet.png')] lg:bg-[url('/FeaturedFirstBgDesktop.png')] bg-no-repeat flex flex-col justify-evenly md:justify-end lg:grid lg:grid-cols-2 content-center h-[45rem] w-[20rem] md:w-[43rem] lg:h-[35rem] lg:w-[69rem] mt-32 mb-8 gap-6 items-center">
           <div className="relative md:pb-0">
-          <Image
+            <Image
               className="md:hidden justify-self-center"
               src="/ZX9-nobg-mobile.png"
               width={172}
@@ -57,6 +57,7 @@ export default function FeaturedItemFirst(props) {
             <SeeProductBox
               paddingDesc="pr-4"
               newProduct={item.newProduct}
+              displayNewProductOverline={false}
               btnColor="black"
               txtColor="white"
               headlineText={item.name}

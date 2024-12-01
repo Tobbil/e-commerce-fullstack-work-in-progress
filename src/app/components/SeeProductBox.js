@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 export default function SeeProductBox(props) {
   const newProduct = props.newProduct; // ZMIEN TO WSZYSTKO ZEBY BYLO BRANE Z ITEMA Z PROPSOW
   const headlineText = props.headlineText;
   const descriptionText = props.descriptionText;
-  const overlineClass = "hidden text-fs-14 tracking-1000 leading-[1.2rem]";
+  const overlineClass = "text-fs-14 tracking-1000 leading-[1.2rem]";
   const paddingDesc = props.paddingDesc;
 
   let btnColorClass;
@@ -37,7 +36,7 @@ export default function SeeProductBox(props) {
 
   if (newProduct && props.newProductFontColor === "white") {
     newProductOpacity = "opacity-50";
-  } else if (!newProduct) {
+  } else if (!newProduct || !props.displayNewProductOverline) {
     newProductOpacity = "hidden";
     gridClass = "grid grid-rows-3-0.1fr gap-0 md:gap-6";
   }
