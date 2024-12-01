@@ -17,14 +17,19 @@ export default function FeaturedItemTop(props) {
     getItem();
   }, [props.itemId]);
 
-  if (!item) { // Show black div until data is fetched from database
+  if (!item) {
+    // Show black div until data is fetched from database
     return (
       <div className="m-0 w-screen bg-[#141414] h-[45rem]">Loading...</div>
     );
   }
 
   return (
-    <div className="flex flex-cols gap-5 overflow-hidden text-darkwhite mb-14 h-[41rem]">
+    <div
+      className={`w-screen bg-[url('/images_headphones/HeaderXX99FeaturedDark.png')] bg-no-repeat bg-[center_bottom_2rem] lg:bg-none
+                  flex self-center flex-cols gap-5 overflow-hidden text-darkwhite mb-14 h-[41rem] 
+                  justify-evenly pr-0 pl-0 lg:pr-40 lg:pl-40`}
+    >
       <div className="flex items-center">
         <SeeProductBox
           width="w-[25rem]"
@@ -38,10 +43,9 @@ export default function FeaturedItemTop(props) {
           itemId={1}
         />
       </div>
-      <div className="relative flex-shrink-0 bottom-20 overflow-hidden scroll-">
+      <div className="hidden lg:flex relative flex-shrink-0 overflow-hidden lg:bottom-10 left-5">
         <Image
-        className="bottom-50"
-          src={"/header_headphones.png"}
+          src={"/images_headphones/HeaderXX99Featured.png"}
           alt={"black headphones"}
           width={710}
           height={729}

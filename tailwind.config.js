@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontSize: {
         "h1": "56px",
+        "h1-mobile": "36px",
         "h2": "28px",
         "fs-13": "13px",
         "fs-14": "14px",
@@ -22,7 +23,9 @@ module.exports = {
         "3-0.1fr": "repeat(3, 0.1fr)"
       },
       gridTemplateColumns: {
-        "menu": "repeat(4, 1fr)"
+        "menu": "repeat(4, 1fr)",
+        "navbar-mobile": "0.2fr 1fr 1fr",
+        "navbar-desktop": "1fr 2fr 1fr"
       },
       letterSpacing: {
         "100": "1px",
@@ -39,7 +42,8 @@ module.exports = {
       backgroundImage: {
         "featured-zx9": "url('/FeaturedBigZX9.png')",
         "featured-zx7-grey": "url('/FeaturedZX7Grey.png')",
-        "categories-shadow": "url('/CategoriesShadowBG.png')"
+        "categories-shadow": "url('/CategoriesShadowBG.png')",
+        "featured-first-mobile": "url('/FeaturedFirstBgMobile.png')"
       },
       height: {
         "400": "400px",

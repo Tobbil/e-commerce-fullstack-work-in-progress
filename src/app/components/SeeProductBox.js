@@ -5,7 +5,7 @@ export default function SeeProductBox(props) {
   const newProduct = props.newProduct; // ZMIEN TO WSZYSTKO ZEBY BYLO BRANE Z ITEMA Z PROPSOW
   const headlineText = props.headlineText;
   const descriptionText = props.descriptionText;
-  const overlineClass = "text-fs-14 tracking-1000 leading-[1.2rem]";
+  const overlineClass = "hidden text-fs-14 tracking-1000 leading-[1.2rem]";
   const paddingDesc = props.paddingDesc;
 
   let btnColorClass;
@@ -14,7 +14,7 @@ export default function SeeProductBox(props) {
     props.newProductFontColor === "white" ? "text-white" : "text-orange";
   let onHover;
   let newProductOpacity = "";
-  let gridClass = "grid grid-rows-4-0.1fr gap-6";
+  let gridClass = "grid grid-rows-4-0.1fr gap-6 text-center lg:text-left";
   let width = props.width ? props.width : "w-[21rem]";
 
   switch (props.btnColor) {
@@ -39,12 +39,12 @@ export default function SeeProductBox(props) {
     newProductOpacity = "opacity-50";
   } else if (!newProduct) {
     newProductOpacity = "hidden";
-    gridClass = "grid grid-rows-3-0.1fr gap-6";
+    gridClass = "grid grid-rows-3-0.1fr gap-0 md:gap-6";
   }
 
   return (
     <>
-      <section className={width}>
+      <section className={`${width} pb-12 md:pb-0`}>
         <div className={gridClass}>
           <div
             className={`${overlineClass} ${newProductOpacity} ${newProductFontColorClass}`}
@@ -52,18 +52,18 @@ export default function SeeProductBox(props) {
             NEW PRODUCT
           </div>
           <h1
-            className={`text-h1 ${txtColorClass} font-bold uppercase leading-[3.6rem] tracking-200`}
+            className={`text-h1-mobile md:text-h1 ${txtColorClass} font-bold uppercase leading-[3.6rem] tracking-200`}
           >
             {headlineText}
           </h1>
           <div
-            className={`text-fs-15 ${txtColorClass} opacity-75 ${paddingDesc}`}
+            className={`text-fs-13 md:text-fs-15 ${txtColorClass} opacity-75 lg:${paddingDesc}`}
           >
             {descriptionText}
           </div>
           <Link href={`/item/${props.itemId}`}>
             <button
-              className={`text-fs-13 font-semibold tracking-100 text-white h-12 w-40 mt-6 ${btnColorClass} ${onHover}`}
+              className={`text-fs-13 font-semibold tracking-100 text-white h-12 w-40 md:mt-6 ${btnColorClass} ${onHover}`}
             >
               SEE PRODUCT
             </button>

@@ -1,11 +1,10 @@
-import "tailwindcss/tailwind.css";
 import CategoryThumbnail from "../components/CategoryThumbnail";
 
 export default function Categories() {
   return (
     <>
       <section className="self-center">
-        <div className="grid grid-cols-3 h-[20rem] w-[69rem] mt-20 gap-6">
+        <div className="flex flex-col md:flex-row lg:h-[20rem] lg:w-[69rem] mt-20 gap-4 lg:gap-6">
           <div className="flex content-center">
             <CategoryThumbnail
               topValue="-top-[5rem]"

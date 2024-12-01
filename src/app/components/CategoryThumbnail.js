@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function CategoryThumbnail(props) {
   return (
     <>
-      <div className="overflow-visible h-[20rem] w-[22rem] relative">
+      <div className="overflow-visible h-[20rem] w-[14rem] lg:w-[22rem] relative">
         <Image
-          className="absolute top-10"
+          className="absolute bottom-16 lg:top-10"
           src="/OvalShadow.png"
           alt="Oval Shadow"
           width={350}
