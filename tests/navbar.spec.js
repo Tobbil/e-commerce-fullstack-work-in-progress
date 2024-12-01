@@ -38,26 +38,18 @@ test.describe("Navbar tests", () => {
 
     for (let i = 0; i < numOfMenuItems; i++) {
       const menuItem = page.locator("ul").first().locator("li").nth(i);
-      const itemText = await menuItem.textContent()
-      const expectedUrl = urls[itemText]
-      await menuItem.click()
-      await expect(page).toHaveURL(expectedUrl)
-      await page.pause()
+      const itemText = await menuItem.textContent();
+      const expectedUrl = urls[itemText];
+      await menuItem.click();
+      await expect(page).toHaveURL(expectedUrl);
     }
   });
+
+  test("cart icon link", async ({ page }) => {
+    await page.goto("/")
+    const expectedUrl = "/cart";
+    const cartIcon = page.getByRole("link", { name: "Basket icon" });
+    await cartIcon.click();
+    await expect(page).toHaveURL(expectedUrl);
+  });
 });
-//   // Expect a title "to contain" a substring.
-//   await expect(page).toHaveTitle(/Playwright/);
-// });
-
-// test("get started link", async ({ page }) => {
-//   await page.goto("https://playwright.dev/");
-
-//   // Click the get started link.
-//   await page.getByRole("link", { name: "Get started" }).click();
-
-//   // Expects page to have a heading with the name of Installation.
-//   await expect(
-//     page.getByRole("heading", { name: "Installation" })
-//   ).toBeVisible();
-// });
