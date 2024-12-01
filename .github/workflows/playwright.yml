@@ -16,6 +16,13 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: npm ci
+    - name: Export Supabase secrets
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        NEXT_PUBLIC_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      run: |
+        echo "Supabase URL: $NEXT_PUBLIC_SUPABASE_URL"
+        echo "Supabase Key loaded."
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Create build

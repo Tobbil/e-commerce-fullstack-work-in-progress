@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <>
       <nav>
-        <div className="grid grid-cols-navbar-mobile lg:grid-cols-3 text-white h-[2rem] items-center justify-items-start pr-16 pl-16 lg:pr-40 lg:pl-40">
+        <div className="grid grid-cols-navbar-mobile lg:grid-cols-navbar-desktop text-white h-[2rem] items-center justify-items-start pr-16 pl-16 lg:pr-40 lg:pl-40">
           <div className="lg:hidden col-start-auto">
             <Image
               src="/menu_icon.png"
@@ -28,18 +28,28 @@ export default function Navbar() {
           </div>
           <div className="hidden xl:w-full lg:flex lg:justify-center">
             <div className="grid grid-flow-col auto-cols-min gap-4 xl:gap-8 text-fs-13 font-semibold tracking-200 text-[#f2f2f2] content-center">
-              <Link className={menuHover} href="/">
-                HOME
-              </Link>
-              <Link className={menuHover} href="/headphones">
-                HEADPHONES
-              </Link>
-              <Link className={menuHover} href="/speakers">
-                SPEAKERS
-              </Link>
-              <Link className={menuHover} href="/earphones">
-                EARPHONES
-              </Link>
+              <ul className="">
+                <li className="inline mr-8">
+                  <Link className={menuHover} href="/">
+                    HOME
+                  </Link>
+                </li>
+                <li className="inline mr-8">
+                  <Link className={menuHover} href="/headphones">
+                    HEADPHONES
+                  </Link>
+                </li>
+                <li className="inline mr-8">
+                  <Link className={menuHover} href="/speakers">
+                    SPEAKERS
+                  </Link>
+                </li>
+                <li className="inline">
+                  <Link className={menuHover} href="/earphones">
+                    EARPHONES
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
           <div className="justify-self-end self-center">
