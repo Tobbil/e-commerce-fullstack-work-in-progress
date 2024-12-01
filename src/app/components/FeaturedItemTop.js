@@ -36,6 +36,7 @@ export default function FeaturedItemTop(props) {
           paddingDesc="pr-16"
           newProduct={item?.newProduct || ""}
           newProductFontColor="white"
+          displayNewProductOverline={true}
           btnColor="orange"
           txtColor="white"
           headlineText={item?.name || ""}

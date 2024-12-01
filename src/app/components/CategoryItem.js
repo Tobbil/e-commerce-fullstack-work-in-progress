@@ -37,6 +37,7 @@ export default function CategoryItem(props) {
               <SeeProductBox
                 paddingDesc="pr-4"
                 newProduct={item?.newProduct || null}
+                displayNewProductOverline={true}
                 newProductFontColor="orange"
                 btnColor="orange"
                 txtColor="black"
@@ -58,6 +59,7 @@ export default function CategoryItem(props) {
               <SeeProductBox
                 paddingDesc="pr-4"
                 newProduct={item?.newProduct || null}
+                displayNewProductOverline={true}
                 newProductFontColor="orange"
                 btnColor="orange"
                 txtColor="black"
