@@ -34,14 +34,11 @@ export default function FeaturedItemTop(props) {
         <SeeProductBox
           width="w-[25rem]"
           paddingDesc="pr-16"
-          newProduct={item?.newProduct || ""}
           newProductFontColor="white"
           displayNewProductOverline={true}
           btnColor="orange"
           txtColor="white"
-          headlineText={item?.name || ""}
-          descriptionText={item?.description || ""}
-          itemId={1}
+          item={item}
         />
       </div>
       <div className="hidden lg:flex relative flex-shrink-0 overflow-hidden lg:bottom-10 left-5">

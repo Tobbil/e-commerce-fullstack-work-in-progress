@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 export default function SeeProductBox(props) {
-  const newProduct = props.newProduct; // ZMIEN TO WSZYSTKO ZEBY BYLO BRANE Z ITEMA Z PROPSOW
-  const headlineText = props.headlineText;
-  const descriptionText = props.descriptionText;
-  const overlineClass = "text-fs-14 tracking-1000 leading-[1.2rem]";
+  const newProduct = props.item?.newProduct || null;
+  const headlineText = props.item?.name || "";
+  const descriptionText = props.item?.description || "";
   const paddingDesc = props.paddingDesc;
+  const overlineClass = "text-fs-14 tracking-1000 leading-[1.2rem]";
 
   let btnColorClass;
   let txtColorClass;
@@ -13,7 +13,7 @@ export default function SeeProductBox(props) {
     props.newProductFontColor === "white" ? "text-white" : "text-orange";
   let onHover;
   let newProductOpacity = "";
-  let gridClass = "grid grid-rows-4-0.1fr gap-6 text-center lg:text-left";
+  let gridClass = "grid grid-rows-4-0.1fr gap-6";
   let width = props.width ? props.width : "w-[21rem]";
 
   switch (props.btnColor) {
@@ -44,7 +44,7 @@ export default function SeeProductBox(props) {
   return (
     <>
       <section className={`${width} pb-12 md:pb-0`}>
-        <div className={gridClass}>
+        <div className={`${gridClass} text-center lg:text-left`}>
           <div
             className={`${overlineClass} ${newProductOpacity} ${newProductFontColorClass}`}
           >
@@ -60,9 +60,9 @@ export default function SeeProductBox(props) {
           >
             {descriptionText}
           </div>
-          <Link href={`/item/${props.itemId}`}>
+          <Link href={`/item/${props.item?.id}`}>
             <button
-              className={`text-fs-13 font-semibold tracking-100 text-white h-12 w-40 md:mt-6 ${btnColorClass} ${onHover}`}
+              className={`text-fs-13 font-semibold tracking-100 text-white h-12 w-40 mt-4 mb-10 md:mt-6 md:mb-6 lg:mt-0 lg:mb-0 ${btnColorClass} ${onHover}`}
             >
               SEE PRODUCT
             </button>

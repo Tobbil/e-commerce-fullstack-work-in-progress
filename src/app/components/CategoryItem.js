@@ -36,14 +36,11 @@ export default function CategoryItem(props) {
             ) : (
               <SeeProductBox
                 paddingDesc="pr-4"
-                newProduct={item?.newProduct || null}
                 displayNewProductOverline={true}
                 newProductFontColor="orange"
                 btnColor="orange"
                 txtColor="black"
-                headlineText={item?.name || ""}
-                descriptionText={item?.description || ""}
-                itemId={props.itemId}
+                item={item}
               />
             )}
           </div>
@@ -56,16 +53,13 @@ export default function CategoryItem(props) {
                 height={560}
               />
             ) : (
-              <SeeProductBox
+                <SeeProductBox
                 paddingDesc="pr-4"
-                newProduct={item?.newProduct || null}
                 displayNewProductOverline={true}
                 newProductFontColor="orange"
                 btnColor="orange"
                 txtColor="black"
-                headlineText={item?.name || ""}
-                descriptionText={item?.description || ""}
-                itemId={props.itemId}
+                item={item}
               />
             )}
           </div>
