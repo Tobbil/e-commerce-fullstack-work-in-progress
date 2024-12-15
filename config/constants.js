@@ -1,0 +1,1 @@
+export const AWS_BUCKET_URL = "https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com"

@@ -3,6 +3,7 @@ import SeeProductBox from "../components/SeeProductBox";
 import { useState, useEffect } from "react";
 
 export default function FeaturedItemTop(props) {
+  const awsUrl = "https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com";
   const [item, setItem] = useState(null);
   useEffect(() => {
     async function getItem() {
@@ -26,27 +27,25 @@ export default function FeaturedItemTop(props) {
 
   return (
     <div
-      className={`w-screen bg-[url('/images_headphones/HeaderXX99FeaturedDark.png')] bg-no-repeat bg-[center_bottom_2rem] lg:bg-none
-                  flex self-center flex-cols gap-5 overflow-hidden text-darkwhite mb-14 h-[41rem] 
-                  justify-evenly pr-0 pl-0 lg:pr-40 lg:pl-40`}
+      // SKROC TE KLASE
+      className={`w-screen bg-[url('https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/items/1/header_featured_sm_md.png')] 
+                  bg-no-repeat bg-[center_bottom_2rem] lg:bg-none self-center flex flex-cols gap-5 overflow-hidden text-darkwhite 
+                  mb-14 h-[41rem] justify-evenly pr-0 pl-0 lg:pr-40 lg:pl-40`}
     >
       <div className="flex items-center">
         <SeeProductBox
           width="w-[25rem]"
           paddingDesc="pr-16"
-          newProduct={item?.newProduct || ""}
           newProductFontColor="white"
           displayNewProductOverline={true}
           btnColor="orange"
           txtColor="white"
-          headlineText={item?.name || ""}
-          descriptionText={item?.description || ""}
-          itemId={1}
+          item={item}
         />
       </div>
       <div className="hidden lg:flex relative flex-shrink-0 overflow-hidden lg:bottom-10 left-5">
         <Image
-          src={"/images_headphones/HeaderXX99Featured.png"}
+          src={`${awsUrl}/items/${props.itemId}/header_featured.png`}
           alt={"black headphones"}
           width={710}
           height={729}
