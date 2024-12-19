@@ -8,6 +8,12 @@ const nextConfig = {
             port: '',
             pathname: '/items/**',
           },
+          {
+            protocol: 'https',
+            hostname: 'audiophile-store-bucket.s3.eu-north-1.amazonaws.com',
+            port: '',
+            pathname: '/categories/**',
+          },
         ],
       },
 };
