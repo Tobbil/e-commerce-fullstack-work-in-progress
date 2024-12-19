@@ -3,6 +3,7 @@ import SeeProductBoxNoDesc from "./SeeProductBoxGreyNoDesc";
 import { useEffect, useState } from "react";
 
 export default function FeaturedItemGrey(props) {
+
   const [item, setItem] = useState(null);
   useEffect(() => {
     async function getItem() {
@@ -29,8 +30,8 @@ export default function FeaturedItemGrey(props) {
   return (
     <>
       <section className="self-center">
-        <div className="bg-featured-zx7-grey bg-no-repeat grid justify-center grid-cols-2 h-[20rem] w-[69rem] mt-8 mb-8 gap-6">
-          <div className="flex items-center justify-center">
+        <div className="relative bg-no-repeat bg-[url('/FeaturedZX7Mobile.png')] md:bg-[url('/FeaturedZX7Tablet.png')] lg:bg-[url('/FeaturedZX7Desktop.png')]  flex justify-start h-[20rem] w-[20rem] md:w-[43rem] lg:w-[69rem] mt-8 mb-8 gap-6">
+          <div className="flex items-center justify-center w-[25rem] h-[20rem] md:h-[17rem]">
             <SeeProductBoxNoDesc
               paddingDesc="pr-4"
               newProduct={item.newProduct}

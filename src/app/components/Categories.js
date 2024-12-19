@@ -10,7 +10,7 @@ export default function Categories() {
               topValue="-top-[5rem]"
               div="left"
               categoryName="HEADPHONES"
-              image="/categories_headphones.png"
+              image="https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/categories/categories_headphones.png"
               alt="small headphones"
               width={122.95}
               height={160}
@@ -22,7 +22,7 @@ export default function Categories() {
               topValue="-top-[4.5rem]"
               div="center"
               categoryName="SPEAKERS"
-              image="/categories_speaker.png"
+              image="https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/categories/categories_speaker.png"
               alt="small speaker"
               width={121.49}
               height={146}
@@ -34,7 +34,7 @@ export default function Categories() {
               topValue="-top-[4rem]"
               div="right"
               categoryName="EARPHONES"
-              image="/categories_earphones.png"
+              image="https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/categories/categories_earphones.png"
               alt="small speaker"
               width={125}
               height={126}
