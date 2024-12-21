@@ -26,7 +26,7 @@ export default function Home() {
           highlightIndex={3}
         />
       </Body>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
