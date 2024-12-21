@@ -24,8 +24,8 @@ export default function CategoryItem(props) {
   return (
     <>
       <section className="self-center">
-        <div className="grid justify-center grid-cols-2 h-[35rem] w-[69rem] mt-16 mb-16 gap-6">
-          <div className="flex flex-col items-center justify-center">
+        <div className="flex h-[35rem] w-[69rem] mt-16 mb-16 gap-12">
+          <div className="flex justify-center">
             {imagePosition === "left" ? (
               <Image
                 src={item?.image || ""}
@@ -44,7 +44,7 @@ export default function CategoryItem(props) {
               />
             )}
           </div>
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex justify-center">
             {imagePosition === "right" ? (
               <Image
                 src={item?.image || ""}
@@ -53,7 +53,7 @@ export default function CategoryItem(props) {
                 height={560}
               />
             ) : (
-                <SeeProductBox
+              <SeeProductBox
                 paddingDesc="pr-4"
                 displayNewProductOverline={true}
                 newProductFontColor="orange"
