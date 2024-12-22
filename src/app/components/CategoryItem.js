@@ -68,14 +68,14 @@ export default function CategoryItem(props) {
               height={352}
             />
           </div>
-            <SeeProductBox
-              width={isMobileViewport ? "20rem" : "25rem"}
-              displayNewProductOverline={true}
-              newProductFontColor="orange"
-              btnColor="orange"
-              txtColor="black"
-              item={item}
-            />
+          <SeeProductBox
+            width={isMobileViewport ? "20rem" : "25rem"}
+            displayNewProductOverline={true}
+            newProductFontColor="orange"
+            btnColor="orange"
+            txtColor="black"
+            item={item}
+          />
         </div>
       </section>
     </>

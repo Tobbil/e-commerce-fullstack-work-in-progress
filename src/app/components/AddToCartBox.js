@@ -15,7 +15,7 @@ export default function AddToCartBox(props) {
   let onHover;
   let newProductOpacity = "";
   let gridClass = "grid grid-rows-4-0.1fr gap-6";
-  let width = props.width ? props.width : "w-[21rem]";
+  let width = props.width ? `w-[${props.width}]` : "w-[21rem]";
 
   switch (props.btnColor) {
     case "black":
