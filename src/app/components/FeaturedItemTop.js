@@ -34,7 +34,7 @@ export default function FeaturedItemTop(props) {
     >
       <div className="flex items-center">
         <SeeProductBox
-          width="w-[25rem]"
+          width="25rem"
           paddingDesc="pr-16"
           newProductFontColor="white"
           displayNewProductOverline={true}

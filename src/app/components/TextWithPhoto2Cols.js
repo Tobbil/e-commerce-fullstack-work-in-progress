@@ -7,8 +7,8 @@ export default function TextWithPhoto2Cols(props) {
   return (
     <>
       <section className="self-center">
-        <div className="flex justify-center flex-col-reverse lg:flex-row h-[36.75rem] lg:w-[69rem] mt-32 mb-32 gap-6">
-          <div className="flex flex-col justify-center text-center lg:pr-32 w-[20rem] md:w-[43rem]">
+        <div className="flex justify-center flex-col-reverse lg:flex-row h-[32rem] lg:w-[69rem] mt-32 mb-32 gap-6">
+          <div className="flex flex-col justify-center text-center lg:pr-32 h-[32rem] w-[20rem] md:w-[43rem]">
             <h1
               className={`text-fs-28 pt-6 md:p-6 md:text-fs-40 text-black font-bold uppercase leading-[1.6rem] tracking-200`}
             >
