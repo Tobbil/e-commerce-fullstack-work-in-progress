@@ -14,7 +14,7 @@ export default function SeeProductBox(props) {
   let onHover;
   let newProductOpacity = "";
   let gridClass = "grid grid-rows-4-0.1fr gap-6";
-  let width = props.width ? props.width : "w-[21rem]";
+  let width = props.width ? `w-[${props.width}]` : "w-[21rem]";
 
   switch (props.btnColor) {
     case "black":
@@ -38,12 +38,12 @@ export default function SeeProductBox(props) {
     newProductOpacity = "opacity-50";
   } else if (!newProduct || !props.displayNewProductOverline) {
     newProductOpacity = "hidden";
-    gridClass = "grid grid-rows-3-0.1fr gap-0 md:gap-6";
+    gridClass = "grid grid-rows-3-0.1fr gap-6";
   }
 
   return (
     <>
-      <section className={`${width} pb-12 md:pb-0`}>
+      <section className={`${width}`}>
         <div className={`${gridClass} text-center lg:text-left`}>
           <div
             className={`${overlineClass} ${newProductOpacity} ${newProductFontColorClass}`}
@@ -51,7 +51,7 @@ export default function SeeProductBox(props) {
             NEW PRODUCT
           </div>
           <h1
-            className={`text-h1-mobile md:text-h1 ${txtColorClass} font-bold uppercase leading-[3.6rem] tracking-200`}
+            className={`text-h1-mobile md:text-h1 ${txtColorClass} font-bold uppercase leading-[2rem] md:leading-[3.6rem] tracking-200`}
           >
             {headlineText}
           </h1>

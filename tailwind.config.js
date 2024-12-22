@@ -25,7 +25,8 @@ module.exports = {
       },
       gridTemplateColumns: {
         "menu": "repeat(4, 1fr)",
-        "navbar-mobile": "0.2fr 1fr 1fr",
+        "navbar-mobile": "1fr 1fr 1fr",
+        "navbar-tablet": "0.2fr 1fr 1fr",
         "navbar-desktop": "1fr 2fr 1fr"
       },
       letterSpacing: {
