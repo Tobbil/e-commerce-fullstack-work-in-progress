@@ -28,7 +28,7 @@ export default function Item2Cols(props) {
   return (
     <>
       <section className="self-center">
-        <div className={`flex flex-col h-[35rem] w-[69rem] mt-16 mb-16 gap-6`}>
+        <div className={"flex flex-col h-[35rem] w-[69rem] mt-16 mb-16 gap-6"}>
           <div
             className={`flex ${flexClass} ${justifyBetween} items-center gap-12`}
           >
@@ -66,7 +66,6 @@ export default function Item2Cols(props) {
               )}
             </div>
           </div>
- 
         </div>
       </section>
     </>
