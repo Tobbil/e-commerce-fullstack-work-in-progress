@@ -36,3 +36,21 @@ export async function getItemFromDB(id) {
 export function convertPrice(price) {
   return price < 1000 ? price : new Intl.NumberFormat("en-US").format(price);
 }
+
+export function countAccessories(accessories) {
+  const accessoriesMap = {};
+  for (let i = 0; i < accessories.length; i++) {
+    const accessory = accessories[i];
+    const quantity = accessories.filter((x) => x === accessory).length;
+
+    const formattedName = accessory.toLowerCase().replace(/\b\w/g, (s) => s.toUpperCase())
+
+    if (!accessoriesMap[accessory])
+    accessoriesMap[accessory] = {
+      name: formattedName,
+      quantity: quantity,
+    };
+  }
+  console.log(accessoriesMap);
+  return accessoriesMap;
+}

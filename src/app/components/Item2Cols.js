@@ -6,6 +6,10 @@ import { useEffect, useState } from "react";
 
 export default function Item2Cols(props) {
   const [item, setItem] = useState(null);
+  const flexClass =
+    props.imagePosition === "right" ? "flex-row-reverse" : "flex-row";
+  const justifyBetween =
+    props.imagePosition === "right" ? "justify-between" : "";
 
   useEffect(() => {
     async function getItem() {
@@ -24,72 +28,43 @@ export default function Item2Cols(props) {
   return (
     <>
       <section className="self-center">
-        <div className="grid justify-center grid-cols-2 h-[35rem] w-[69rem] mt-16 mb-16 gap-6">
-          <div className="flex flex-col items-center justify-center">
-            {props.imagePosition === "left" ? (
-              <Image
-                src={item?.image || ""}
-                alt={item?.imageAltTxt || ""}
-                width={540}
-                height={560}
-              />
-            ) : props.addToCart ? (
-              <AddToCartBox
-                paddingDesc="pr-4"
-                newProduct={item?.newProduct || null}
-                newProductFontColor="orange"
-                btnColor="orange"
-                txtColor="black"
-                headlineText={item?.name || ""}
-                descriptionText={item?.description || ""}
-                price={item?.price || 0}
-                itemId={props.itemId}
-              />
-            ) : (
-              <SeeProductBox
-                paddingDesc="pr-4"
-                newProduct={item?.newProduct || null}
-                newProductFontColor="orange"
-                btnColor="orange"
-                txtColor="black"
-                headlineText={item?.name || ""}
-                descriptionText={item?.description || ""}
-                itemId={props.itemId}
-              />
-            )}
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            {props.imagePosition === "right" ? (
-              <Image
-                src={item?.image || ""}
-                alt={item?.imageAltTxt || ""}
-                width={540}
-                height={560}
-              />
-            ) : props.addToCart ? (
-              <AddToCartBox
-                paddingDesc="pr-4"
-                newProduct={item?.newProduct || null}
-                newProductFontColor="orange"
-                btnColor="orange"
-                txtColor="black"
-                headlineText={item?.name || ""}
-                descriptionText={item?.description || ""}
-                price={item?.price || 0}
-                itemId={props.itemId}
-              />
-            ) : (
-              <SeeProductBox
-                paddingDesc="pr-4"
-                newProduct={item?.newProduct || null}
-                newProductFontColor="orange"
-                btnColor="orange"
-                txtColor="black"
-                headlineText={item?.name || ""}
-                descriptionText={item?.description || ""}
-                itemId={props.itemId}
-              />
-            )}
+        <div className={"flex flex-col h-[35rem] w-[69rem] mt-16 mb-16 gap-6"}>
+          <div
+            className={`flex ${flexClass} ${justifyBetween} items-center gap-12`}
+          >
+            <Image
+              src={item?.image || ""}
+              alt={item?.imageAltTxt || ""}
+              width={540}
+              height={560}
+            />
+            <div className="flex flex-row h-full items-center justify-center w-[33rem]">
+              {props.addToCart ? (
+                <AddToCartBox
+                  width="25rem"
+                  paddingDesc="pr-4"
+                  newProduct={item?.newProduct || null}
+                  newProductFontColor="orange"
+                  btnColor="orange"
+                  txtColor="black"
+                  headlineText={item?.name || ""}
+                  descriptionText={item?.description || ""}
+                  price={item?.price || 0}
+                  itemId={props.itemId}
+                />
+              ) : (
+                <SeeProductBox
+                  width="30rem"
+                  newProduct={item?.newProduct || null}
+                  newProductFontColor="orange"
+                  btnColor="orange"
+                  txtColor="black"
+                  headlineText={item?.name || ""}
+                  descriptionText={item?.description || ""}
+                  itemId={props.itemId}
+                />
+              )}
+            </div>
           </div>
         </div>
       </section>
