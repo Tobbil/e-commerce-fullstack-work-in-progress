@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <>
       <nav>
-        <div className="grid grid-cols-navbar-mobile md:grid-cols-navbar-tablet lg:grid-cols-navbar-desktop text-white h-[2rem] items-center justify-self-center md:justify-items-start md:w-[43rem] lg:w-[69rem]">
+        <div className="grid grid-cols-navbar-mobile md:grid-cols-navbar-tablet lg:grid-cols-navbar-desktop text-white h-[2rem] items-center justify-self-center md:justify-items-start w-[20rem] md:w-[43rem] lg:w-[69rem]">
           <div className="lg:hidden col-start-auto">
             <Image
               src="/menu_icon.png"

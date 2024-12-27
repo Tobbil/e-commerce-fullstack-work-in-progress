@@ -51,7 +51,7 @@ export default function SeeProductBox(props) {
             NEW PRODUCT
           </div>
           <h1
-            className={`text-h1-mobile md:text-h1 ${txtColorClass} font-bold uppercase leading-[2rem] md:leading-[3.6rem] tracking-200`}
+            className={`text-h1-mobile lg::text-h1 ${txtColorClass} font-bold uppercase leading-[2rem] md:leading-[3.6rem] tracking-200`}
           >
             {headlineText}
           </h1>
