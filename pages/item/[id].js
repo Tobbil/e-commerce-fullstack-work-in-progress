@@ -7,6 +7,7 @@ import Item2Cols from "@/app/components/Item2Cols";
 import TextWithPhoto2Cols from "@/app/components/TextWithPhoto2Cols";
 import Features from "@/app/components/Features";
 import InTheBox from "@/app/components/InTheBox";
+import Recommendations from "@/app/components/Recommendations";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -43,7 +44,7 @@ export default function ItemPage() {
         <Navbar />
       </Header>
       <Body>
-        <div className="self-center w-[69rem] mt-16">
+        <div className="self-center w-[20rem] md:w-[43rem] lg:w-[69rem] mt-16">
           <span
             onClick={() => router.back()}
             className="text-black opacity-50"
@@ -53,17 +54,32 @@ export default function ItemPage() {
           </span>
         </div>
         <Item2Cols imagePosition="left" addToCart={true} itemId={id} />
-        <div className="flex flex-row gap-24 w-[69rem] self-center mt-20">
+        <div className="flex flex-col lg:flex-row gap-6 md:w-[43rem] lg:w-[69rem] self-center md:mt-10 lg:mt-20">
           <Features item={item} />
           <InTheBox item={item} />
         </div>
-        <div className="mt-20 w-[69rem] self-center">
+        <div className="mt-20 w-[69rem] self-center hidden lg:block">
           <Image
             src={`https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/items/${id}/product_detail_bottom.png`}
             width={1110}
             height={592}
           />
         </div>
+        <div className="mt-20 w-[43rem] self-center hidden md:max-lg:block">
+          <Image
+            src={`https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/items/${id}/product_detail_bottom.png`}
+            width={690}
+            height={368}
+          />
+        </div>
+        <div className="mt-20 w-[20rem] self-center md:hidden">
+          <Image
+            src={`https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/items/${id}/product_detail_bottom_mobile.png`}
+            width={327}
+            height={756}
+          />
+        </div>
+        <Recommendations itemId={id}/>
         <Categories />
         <TextWithPhoto2Cols
           headlineText="BRINGING YOU THE BEST AUDIO GEAR"
