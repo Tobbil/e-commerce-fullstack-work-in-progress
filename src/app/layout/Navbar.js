@@ -1,8 +1,57 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import CartModal from "../components/CartModal";
 
 export default function Navbar() {
   const menuHover = "hover:text-[#d87d4a] transition duration-200 ease-in-out";
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([
+    // {
+    //   id: 1,
+    //   name: "XX99 MK II",
+    //   price: 2999,
+    //   quantity: 1,
+    //   image: "/path-to-image.jpg",
+    // },
+    // {
+    //   id: 2,
+    //   name: "XX59",
+    //   price: 899,
+    //   quantity: 2,
+    //   image: "/path-to-image.jpg",
+    // },
+    // {
+    //   id: 3,
+    //   name: "YX1",
+    //   price: 599,
+    //   quantity: 1,
+    //   image: "/path-to-image.jpg",
+    // },
+  ]);
+
+  const handleIncrease = (id) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const handleDecrease = (id) => {
+    setCartItems(
+      (prev) =>
+        prev
+          .map((item) =>
+            item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+          )
+          .filter((item) => item.quantity > 0) // Remove items with quantity 0
+    );
+  };
+
+  const removeAll = () => {
+    setCartItems([]);
+  };
 
   return (
     <>
@@ -52,16 +101,28 @@ export default function Navbar() {
               </ul>
             </div>
           </div>
-          <div className="justify-self-end self-center">
-            <Link href="/cart">
-              <Image
-                src="/basket_icon.png"
-                alt="Basket icon"
-                width={23.33}
-                height={20}
-              />
-            </Link>
+          <div
+            onClick={() =>
+              isModalOpen ? setIsModalOpen(false) : setIsModalOpen(true)
+            }
+            className="justify-self-end self-center cursor-pointer"
+          >
+            <Image
+              src="/basket_icon.png"
+              alt="Basket icon"
+              width={23.33}
+              height={20}
+            />
           </div>
+          <CartModal
+            isOpen={isModalOpen}
+            cartItems={cartItems.map((item) => ({
+              ...item,
+              onIncrease: handleIncrease,
+              onDecrease: handleDecrease,
+            }))}
+            removeAll={removeAll}
+          />
         </div>
       </nav>
       <div className="mt-9 opacity-20 mb-[0.1em] md:w-[43rem] lg:w-[69rem] justify-self-center">
