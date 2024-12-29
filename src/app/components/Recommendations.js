@@ -21,8 +21,6 @@ export default function Recommendations(props) {
     }
   }
 
-  console.log(randomIds);
-
   return (
     <>
       <h1 className="text-fs-32 text-center mt-20">YOU MAY ALSO LIKE</h1>

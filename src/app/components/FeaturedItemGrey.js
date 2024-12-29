@@ -1,3 +1,5 @@
+"use client";
+
 import "tailwindcss/tailwind.css";
 import SeeProductBoxNoDesc from "./SeeProductBoxGreyNoDesc";
 import { useEffect, useState } from "react";

@@ -6,27 +6,20 @@ import CategoryHeader from "@/app/components/CategoryHeader";
 import Categories from "@/app/components/Categories";
 import CategoryItem from "@/app/components/CategoryItem";
 import TextWithPhoto2Cols from "@/app/components/TextWithPhoto2Cols";
+import { CartProvider } from "@/app/components/CartContext";
 
 export default function Headphones() {
   return (
     <>
       <Header>
         <Navbar />
+
         <CategoryHeader categoryName="HEADPHONES" />
       </Header>
       <Body>
-        <CategoryItem
-          imagePosition="left"
-          itemId={1}
-        />
-        <CategoryItem
-          imagePosition="right"
-          itemId={2}
-        />
-        <CategoryItem
-          imagePosition="left"
-          itemId={3}
-        />
+        <CategoryItem imagePosition="left" itemId={1} />
+        <CategoryItem imagePosition="right" itemId={2} />
+        <CategoryItem imagePosition="left" itemId={3} />
         <Categories />
         <TextWithPhoto2Cols
           headlineText="BRINGING YOU THE BEST AUDIO GEAR"

@@ -6,22 +6,26 @@ import CategoryHeader from "@/app/components/CategoryHeader";
 import Categories from "@/app/components/Categories";
 import CategoryItem from "@/app/components/CategoryItem";
 import TextWithPhoto2Cols from "@/app/components/TextWithPhoto2Cols";
+import { CartProvider } from "@/app/components/CartContext";
 
-export default function Speakers() {
+export default function Earphones() {
   return (
     <>
       <Header>
         <Navbar />
-        <CategoryHeader categoryName="SPEAKERS" />
       </Header>
+      <CategoryHeader categoryName="EARPHONES" />
       <Body>
         <CategoryItem
+          newItem={true}
           imagePosition="left"
-          itemId={4}
-        />
-        <CategoryItem
-          imagePosition="right"
-          itemId={5}
+          imageSrc="/YX1-Earphones.png"
+          imageAlt="black YX1 wireless earphones"
+          imageWidth={540}
+          imageHeight={560}
+          headlineText="YX1 Wireless Earphones"
+          descriptionText="Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature."
+          itemId={6}
         />
         <Categories />
         <TextWithPhoto2Cols

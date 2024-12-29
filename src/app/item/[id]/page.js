@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/app/layout/Header.js";
 import Body from "@/app/layout/Body.js";
 import Footer from "@/app/layout/Footer.js";
@@ -8,14 +10,11 @@ import TextWithPhoto2Cols from "@/app/components/TextWithPhoto2Cols";
 import Features from "@/app/components/Features";
 import InTheBox from "@/app/components/InTheBox";
 import Recommendations from "@/app/components/Recommendations";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function ItemPage() {
-  const router = useRouter();
-  const { id } = router.query;
-
+export default function ItemPage({ params }) {
+  const { id } = React.use(params);
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -32,11 +31,7 @@ export default function ItemPage() {
   }, [id]);
 
   if (loading) return <div>Loading...</div>;
-  console.log(item);
   if (!item) return <div>Item not found</div>;
-
-  console.log(item.features);
-  const paragraphs = item.features.split("\\n");
 
   return (
     <>
@@ -63,6 +58,7 @@ export default function ItemPage() {
             src={`https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/items/${id}/product_detail_bottom.png`}
             width={1110}
             height={592}
+            alt="alt text" // TODO
           />
         </div>
         <div className="mt-20 w-[43rem] self-center hidden md:max-lg:block">
@@ -70,6 +66,7 @@ export default function ItemPage() {
             src={`https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/items/${id}/product_detail_bottom.png`}
             width={690}
             height={368}
+            alt="alt text" // TODO
           />
         </div>
         <div className="mt-20 w-[20rem] self-center md:hidden">
@@ -77,9 +74,10 @@ export default function ItemPage() {
             src={`https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/items/${id}/product_detail_bottom_mobile.png`}
             width={327}
             height={756}
+            alt="alt text" // TODO
           />
         </div>
-        <Recommendations itemId={id}/>
+        <Recommendations itemId={id} />
         <Categories />
         <TextWithPhoto2Cols
           headlineText="BRINGING YOU THE BEST AUDIO GEAR"

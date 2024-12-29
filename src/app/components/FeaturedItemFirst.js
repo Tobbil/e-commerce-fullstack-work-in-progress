@@ -1,9 +1,14 @@
+"use client";
+
 import SeeProductBox from "./SeeProductBox";
 import { useEffect, useState } from "react";
+import { useCart } from "../components/CartContext";
 import Image from "next/image";
 
 export default function FeaturedItemFirst(props) {
   const [item, setItem] = useState(null);
+  const context = useCart();
+  console.log(context);
   useEffect(() => {
     async function getItem() {
       try {

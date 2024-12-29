@@ -6,7 +6,6 @@ export default async function handler(req, res) {
     return res.status(200).send("OK");
   }
   const { id } = req.query;
-  console.log("ID:", id);
 
   if (!id) {
     return res.status(400).json({ error: "Missing 'id' parameter" });

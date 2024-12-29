@@ -1,34 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useCart } from "../components/CartContext";
 import CartModal from "../components/CartModal";
 
 export default function Navbar() {
   const menuHover = "hover:text-[#d87d4a] transition duration-200 ease-in-out";
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([
-    // {
-    //   id: 1,
-    //   name: "XX99 MK II",
-    //   price: 2999,
-    //   quantity: 1,
-    //   image: "/path-to-image.jpg",
-    // },
-    // {
-    //   id: 2,
-    //   name: "XX59",
-    //   price: 899,
-    //   quantity: 2,
-    //   image: "/path-to-image.jpg",
-    // },
-    // {
-    //   id: 3,
-    //   name: "YX1",
-    //   price: 599,
-    //   quantity: 1,
-    //   image: "/path-to-image.jpg",
-    // },
-  ]);
+
+  const { cartItems, setCartItems } = useCart();
+  console.log(cartItems);
 
   const handleIncrease = (id) => {
     setCartItems((prev) =>
