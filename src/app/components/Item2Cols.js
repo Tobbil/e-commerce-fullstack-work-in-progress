@@ -22,13 +22,16 @@ export default function Item2Cols(props) {
       }
     }
     getItem();
-    console.log(item);
   }, [props.itemId]);
 
   return (
     <>
       <section className="self-center">
-        <div className={"flex flex-col md:h-full lg:h-[35rem] md:w-[43rem] lg:w-[69rem] mt-16 mb-16 gap-6"}>
+        <div
+          className={
+            "flex flex-col md:h-full lg:h-[35rem] md:w-[43rem] lg:w-[69rem] mt-16 mb-16 gap-6"
+          }
+        >
           <div
             className={`flex flex-col ${flexClass} ${justifyBetween} items-center md:gap-24 lg:gap-12`}
           >

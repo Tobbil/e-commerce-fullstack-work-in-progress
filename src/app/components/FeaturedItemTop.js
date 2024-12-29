@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import SeeProductBox from "../components/SeeProductBox";
 import { useState, useEffect } from "react";

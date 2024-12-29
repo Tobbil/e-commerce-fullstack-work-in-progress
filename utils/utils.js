@@ -28,7 +28,6 @@ export async function getItemFromDB(id) {
       }
     }
     getItem();
-    console.log(item);
   }, []);
   return item;
 }
@@ -43,14 +42,15 @@ export function countAccessories(accessories) {
     const accessory = accessories[i];
     const quantity = accessories.filter((x) => x === accessory).length;
 
-    const formattedName = accessory.toLowerCase().replace(/\b\w/g, (s) => s.toUpperCase())
+    const formattedName = accessory
+      .toLowerCase()
+      .replace(/\b\w/g, (s) => s.toUpperCase());
 
     if (!accessoriesMap[accessory])
-    accessoriesMap[accessory] = {
-      name: formattedName,
-      quantity: quantity,
-    };
+      accessoriesMap[accessory] = {
+        name: formattedName,
+        quantity: quantity,
+      };
   }
-  console.log(accessoriesMap);
   return accessoriesMap;
 }

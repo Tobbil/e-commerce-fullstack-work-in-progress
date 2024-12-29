@@ -8,6 +8,7 @@ import FeaturedItemGrey2Cols from "@/app/components/FeaturedItemGrey2Cols";
 import FeaturedItemFirst from "@/app/components/FeaturedItemFirst";
 import Categories from "@/app/components/Categories";
 import TextWithPhoto2Cols from "@/app/components/TextWithPhoto2Cols";
+import { CartProvider } from "@/app/components/CartContext";
 
 export default function Home() {
   return (
@@ -18,9 +19,9 @@ export default function Home() {
       </Header>
       <Body>
         <Categories />
-        <FeaturedItemFirst itemId={4}/>
-        <FeaturedItemGrey itemId={5}/>
-        <FeaturedItemGrey2Cols itemId={6}/>
+        <FeaturedItemFirst itemId={4} />
+        <FeaturedItemGrey itemId={5} />
+        <FeaturedItemGrey2Cols itemId={6} />
         <TextWithPhoto2Cols
           headlineText="BRINGING YOU THE BEST AUDIO GEAR"
           highlightIndex={3}

@@ -1,18 +1,20 @@
 import React from "react";
 import Image from "next/image";
+import { convertPrice } from "../../../utils/utils";
 
 export default function CartModal({ isOpen, cartItems, removeAll }) {
   if (!isOpen) return null;
 
-  const handleRemoveAll = () => removeAll()
+  const handleRemoveAll = () => removeAll();
 
   return (
-    <div className="fixed inset-0 text-black bg-black bg-opacity-50 flex justify-end pointer-events-none z-50 pr-40 pt-40">
-      {/* Modal Content */}
+    <div className="fixed inset-0 text-black bg-black bg-opacity-50 flex justify-end pointer-events-none z-50 pr-5 md:pr-10 lg:pr-40 pt-32">
       <div className="bg-white rounded-lg shadow-lg pointer-events-auto z-60 w-96 p-6 relative h-fit">
         <div className="flex justify-between">
           <h2 className="text-lg font-bold mb-4">Cart ({cartItems.length})</h2>
-          <p className="text-fs-13 cursor-pointer" onClick={handleRemoveAll}>Remove all</p> {/* ADD REMOVE ALL LOGIC */}
+          <p className="text-fs-13 cursor-pointer" onClick={handleRemoveAll}>
+            Remove all
+          </p>
         </div>
         <div className="space-y-4">
           {cartItems.map((item) => (
@@ -29,7 +31,9 @@ export default function CartModal({ isOpen, cartItems, removeAll }) {
                 />
                 <div>
                   <h3 className="text-sm font-semibold">{item.name}</h3>
-                  <p className="text-sm text-gray-500">${item.price}</p>
+                  <p className="text-sm text-gray-500">
+                    ${convertPrice(item.price)}
+                  </p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
@@ -54,15 +58,17 @@ export default function CartModal({ isOpen, cartItems, removeAll }) {
           <span className="font-bold">Total</span>
           <span className="font-bold">
             $
-            {cartItems.reduce(
-              (total, item) => total + item.price * item.quantity,
-              0
+            {convertPrice(
+              cartItems.reduce(
+                (total, item) => total + item.price * item.quantity,
+                0
+              )
             )}
           </span>
         </div>
         <div className="flex justify-center">
           <button
-            onClick={null}
+            onClick={null} // ADD CHECKOUT LINK
             className={`text-fs-13 font-semibold tracking-100 text-white h-12 w-44 md:w-32 lg:w-40 mt-6 bg-[#D87D4A] hover:bg-[#FBAF85]`}
           >
             {" "}

@@ -1,7 +1,11 @@
+"use client";
+
+import { useCart } from "../components/CartContext";
 import { useState } from "react";
 import { convertPrice } from "../../../utils/utils";
 
 export default function AddToCartBox(props) {
+  const { addToCart } = useCart();
   const newProduct = props.newProduct; // ZMIEN TO WSZYSTKO ZEBY BYLO BRANE Z ITEMA Z PROPSOW
   const headlineText = props.headlineText;
   const descriptionText = props.descriptionText;
@@ -49,8 +53,13 @@ export default function AddToCartBox(props) {
   };
 
   const handleAddToCart = () => {
-    console.log("IMPLEMENT ADDING TO CART"); // Pass the quantity to parent or cart logic
-    console.log(`TESTING IF QUANTITY IS PASSED: ${quantity}`);
+    addToCart({
+      id: props.itemId,
+      name: props.shortName,
+      price: props.price,
+      quantity: quantity,
+      image: null,
+    });
   };
 
   return (
@@ -67,9 +76,7 @@ export default function AddToCartBox(props) {
           >
             {headlineText}
           </h1>
-          <div
-            className={`text-fs-15 ${txtColorClass} opacity-75`}
-          >
+          <div className={`text-fs-15 ${txtColorClass} opacity-75`}>
             {descriptionText}
           </div>
           <div className="font-semibold text-fs-18 tracking-129">

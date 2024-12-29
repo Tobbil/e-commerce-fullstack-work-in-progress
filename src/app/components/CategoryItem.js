@@ -1,3 +1,5 @@
+"use client";
+
 import "tailwindcss/tailwind.css";
 import Image from "next/image";
 import SeeProductBox from "./SeeProductBox";
@@ -38,7 +40,6 @@ export default function CategoryItem(props) {
       }
     }
     getItem();
-    console.log(item);
   }, [props.itemId]);
 
   const imagePosition = props.imagePosition;
