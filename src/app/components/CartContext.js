@@ -9,29 +9,7 @@ export function useCart() {
 }
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([ // TODO: Zmien na pusta liste!
-    {
-      id: 1,
-      name: "XX99 MK II",
-      price: 2999,
-      quantity: 1,
-      image: "/path-to-image.jpg",
-    },
-    {
-      id: 2,
-      name: "XX59",
-      price: 899,
-      quantity: 2,
-      image: "/path-to-image.jpg",
-    },
-    {
-      id: 3,
-      name: "YX1",
-      price: 599,
-      quantity: 1,
-      image: "/path-to-image.jpg",
-    },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
   function addToCart(item) {
     setCartItems((prevItems) => {
@@ -59,7 +37,13 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ cartItems, setCartItems, addToCart, removeFromCart, updateQuantity }}
+      value={{
+        cartItems,
+        setCartItems,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>
