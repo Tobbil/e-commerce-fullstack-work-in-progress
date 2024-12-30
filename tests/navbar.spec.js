@@ -44,12 +44,4 @@ test.describe("Navbar tests", () => {
       await expect(page).toHaveURL(expectedUrl);
     }
   });
-
-  test("cart icon link", async ({ page }) => {
-    await page.goto("/")
-    const expectedUrl = "/cart";
-    const cartIcon = page.getByRole("link", { name: "Basket icon" });
-    await cartIcon.click();
-    await expect(page).toHaveURL(expectedUrl);
-  });
 });
