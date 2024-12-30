@@ -8,7 +8,7 @@ export default function CartModal({ isOpen, cartItems, removeAll }) {
   const handleRemoveAll = () => removeAll();
 
   return (
-    <div className="fixed inset-0 text-black bg-black bg-opacity-50 flex justify-end pointer-events-none z-50 pr-5 md:pr-10 lg:pr-40 pt-32">
+    <div className="fixed inset-0 text-black bg-black bg-opacity-50 flex justify-end pointer-events-none z-50 pr-5 md:pr-10 lg:pr-40 pt-32" data-testid="cart-modal">
       <div className="bg-white rounded-lg shadow-lg pointer-events-auto z-60 w-96 p-6 relative h-fit">
         <div className="flex justify-between">
           <h2 className="text-lg font-bold mb-4">Cart ({cartItems.length})</h2>
@@ -16,7 +16,7 @@ export default function CartModal({ isOpen, cartItems, removeAll }) {
             Remove all
           </p>
         </div>
-        <div className="space-y-4">
+        <div className="space-y-4" data-testid="cart-items">
           {cartItems.map((item) => (
             <div
               key={item.id}
