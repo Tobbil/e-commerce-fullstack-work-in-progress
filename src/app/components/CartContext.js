@@ -9,7 +9,7 @@ export function useCart() {
 }
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([
+  const [cartItems, setCartItems] = useState([ // TODO: Zmien na pusta liste!
     {
       id: 1,
       name: "XX99 MK II",

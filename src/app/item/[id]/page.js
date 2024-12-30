@@ -11,9 +11,11 @@ import Features from "@/app/components/Features";
 import InTheBox from "@/app/components/InTheBox";
 import Recommendations from "@/app/components/Recommendations";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function ItemPage({ params }) {
+  const router = useRouter();
   const { id } = React.use(params);
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
