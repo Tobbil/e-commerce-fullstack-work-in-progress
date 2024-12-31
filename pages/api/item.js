@@ -5,18 +5,26 @@ export default async function handler(req, res) {
   if (req.method === "OPTIONS") {
     return res.status(200).send("OK");
   }
-  const { id } = req.query;
 
-  if (!id) {
-    return res.status(400).json({ error: "Missing 'id' parameter" });
+  const { id, name } = req.query;
+
+  if (!id && !name) {
+    return res.status(400).json({ error: "Missing 'id' or 'name' parameter" });
   }
+
   try {
-    const { data, error } = await supabase
-      .from("products")
-      .select("*")
-      .eq("id", id);
+    let query = supabase.from("products").select("*");
+
+    if (id) {
+      query = query.eq("id", id);
+    } else if (name) {
+      query = query.ilike("name", `%${name}%`); // Use ilike for case-insensitive search
+    }
+
+    const { data, error } = await query;
 
     if (error) throw error;
+
     const dataTransformed = toCamelCase(data);
 
     // If no data is found, return a 404

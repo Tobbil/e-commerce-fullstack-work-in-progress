@@ -8,7 +8,10 @@ export default function CartModal({ isOpen, cartItems, removeAll }) {
   const handleRemoveAll = () => removeAll();
 
   return (
-    <div className="fixed inset-0 text-black bg-black bg-opacity-50 flex justify-end pointer-events-none z-50 pr-5 md:pr-10 lg:pr-40 pt-32" data-testid="cart-modal">
+    <div
+      className="fixed inset-0 text-black bg-black bg-opacity-50 flex justify-end pointer-events-none z-50 pr-5 md:pr-10 lg:pr-40 pt-32"
+      data-testid="qa-cart-modal"
+    >
       <div className="bg-white rounded-lg shadow-lg pointer-events-auto z-60 w-96 p-6 relative h-fit">
         <div className="flex justify-between">
           <h2 className="text-lg font-bold mb-4">Cart ({cartItems.length})</h2>
@@ -16,11 +19,12 @@ export default function CartModal({ isOpen, cartItems, removeAll }) {
             Remove all
           </p>
         </div>
-        <div className="space-y-4" data-testid="cart-items">
-          {cartItems.map((item) => (
+        <div className="space-y-4" data-testid="qa-cart-items">
+          {cartItems.map((item, index) => (
             <div
               key={item.id}
               className="flex items-center justify-between border-b pb-2"
+              data-testid={`qa-cart-item-${index}`}
             >
               <div className="flex items-center space-x-4">
                 <Image
@@ -30,7 +34,12 @@ export default function CartModal({ isOpen, cartItems, removeAll }) {
                   height={64}
                 />
                 <div>
-                  <h3 className="text-sm font-semibold">{item.name}</h3>
+                  <h3
+                    className="text-sm font-semibold"
+                    data-testid="qa-cart-product-name"
+                  >
+                    {item.shortName.toUpperCase()}
+                  </h3>
                   <p className="text-sm text-gray-500">
                     ${convertPrice(item.price)}
                   </p>
@@ -43,7 +52,7 @@ export default function CartModal({ isOpen, cartItems, removeAll }) {
                 >
                   -
                 </button>
-                <span>{item.quantity}</span>
+                <span data-testid="qa-cart-quantity">{item.quantity}</span>
                 <button
                   className="px-2 py-1 bg-gray-200 rounded text-sm"
                   onClick={() => item.onIncrease(item.id)}

@@ -54,46 +54,47 @@ export default function AddToCartBox(props) {
 
   const handleAddToCart = () => {
     addToCart({
-      id: props.itemId,
-      name: props.shortName,
-      price: props.price,
+      ...props.item,
       quantity: quantity,
-      image: null,
     });
   };
 
   return (
     <>
       <section className={width}>
-        <div className={gridClass}>
+        <div className={gridClass} data-testid="qa-add-to-cart-box">
           <div
             className={`${overlineClass} ${newProductOpacity} ${newProductFontColorClass}`}
+            data-testid="qa-new-product-overline"
           >
             NEW PRODUCT
           </div>
           <h1
             className={`text-fs-32 lg:text-fs-40 ${txtColorClass} font-bold uppercase leading-[2rem] lg:leading-[3.6rem] tracking-100 lg:tracking-200`}
+            data-testid="qa-product-name"
           >
             {headlineText}
           </h1>
-          <div className={`text-fs-15 ${txtColorClass} opacity-75`}>
+          <div
+            className={`text-fs-15 ${txtColorClass} opacity-75`}
+            data-testid="qa-product-description"
+          >
             {descriptionText}
           </div>
           <div className="font-semibold text-fs-18 tracking-129">
-            $ {convertPrice(props.price)}
+            $ {convertPrice(props.item.price)}
           </div>
           <div className="flex flex-row gap-6">
-            <label htmlFor="quantity" className="md:w-32 lg:w-40 h-12 self-end">
-              <input
-                className="w-32 lg:w-40 h-12 text-center bg-[#f1f1f1]"
-                id="quantity"
-                type="number"
-                min="1"
-                max="100"
-                value={quantity}
-                onChange={handleChange}
-              />
-            </label>
+            <input
+              className="w-32 lg:w-40 h-12 text-center bg-[#f1f1f1] self-end"
+              id="quantity"
+              type="number"
+              min="1"
+              max="100"
+              value={quantity}
+              onChange={handleChange}
+              aria-label="Quantity"
+            />
             <button
               onClick={handleAddToCart}
               className={`text-fs-13 font-semibold tracking-100 text-white h-12 w-44 md:w-32 lg:w-40 mt-6 ${btnColorClass} ${onHover}`}

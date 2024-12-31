@@ -11,7 +11,6 @@ export default function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { cartItems, setCartItems } = useCart();
-  console.log(cartItems);
 
   const handleIncrease = (id) => {
     setCartItems((prev) =>
