@@ -58,17 +58,22 @@ export default function Item2Cols(props) {
             />
             <div className="flex flex-row h-full items-center justify-center md:w-[20rem] lg:w-[33rem]">
               {props.addToCart ? (
-                <AddToCartBox
-                  width="20rem"
-                  newProduct={item?.newProduct || null}
-                  newProductFontColor="orange"
-                  btnColor="orange"
-                  txtColor="black"
-                  headlineText={item?.name || ""}
-                  descriptionText={item?.description || ""}
-                  price={item?.price || 0}
-                  itemId={props.itemId}
-                />
+                item ? (
+                  <AddToCartBox
+                    width="20rem"
+                    newProduct={item?.newProduct || null}
+                    newProductFontColor="orange"
+                    btnColor="orange"
+                    txtColor="black"
+                    headlineText={item?.name || ""}
+                    descriptionText={item?.description || ""}
+                    price={item?.price || 0}
+                    itemId={props.itemId}
+                    item={item}
+                  />
+                ) : (
+                  <p>Loading...</p>
+                )
               ) : (
                 <SeeProductBox
                   width="25rem"
