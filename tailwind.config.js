@@ -8,6 +8,7 @@ module.exports = {
         "h1": "56px",
         "h1-mobile": "36px",
         "h2": "28px",
+        "fs-10": "10px",
         "fs-13": "13px",
         "fs-14": "14px",
         "fs-15": "15px",

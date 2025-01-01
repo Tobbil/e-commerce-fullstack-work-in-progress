@@ -87,7 +87,7 @@ export default function Navbar() {
             onClick={() =>
               isModalOpen ? setIsModalOpen(false) : setIsModalOpen(true)
             }
-            className="justify-self-end self-center cursor-pointer"
+            className="justify-self-end self-center cursor-pointer relative"
           >
             <Image
               src="/basket_icon.png"
@@ -95,6 +95,11 @@ export default function Navbar() {
               width={23.33}
               height={20}
             />
+            {cartItems.length > 0 && (
+              <div className="absolute top-0 right-0 w-3 h-3 bg-orange text-white rounded-full flex items-center justify-center text-fs-10 z-10">
+                {cartItems.reduce((total, item) => total + item.quantity, 0)}
+              </div>
+            )}
           </div>
           <CartModal
             isOpen={isModalOpen}
