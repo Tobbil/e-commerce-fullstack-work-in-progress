@@ -54,4 +54,20 @@ test.describe("cart tests", () => {
     const cartItems = cartContent.locator(":scope > div");
     await expect(cartItems).toHaveCount(0);
   });
+
+  test("cart item number indicator is updated correctly", async ({
+    addOneToCart,
+    page,
+  }) => {
+    const numberIndicator = page.locator("nav").locator(".rounded-full");
+    const removeButton = page.getByTestId("qa-cart-item-0").getByText("-");
+    const addButton = page.getByTestId("qa-cart-item-0").getByText("+");
+    expect(numberIndicator).toHaveText("1");
+    await addButton.click();
+    expect(numberIndicator).toHaveText("2");
+    await removeButton.click();
+    expect(numberIndicator).toHaveText("1");
+    await removeButton.click();
+    expect(numberIndicator).toBeHidden();
+  });
 });
