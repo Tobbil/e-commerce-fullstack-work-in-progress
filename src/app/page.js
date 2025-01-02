@@ -8,7 +8,6 @@ import FeaturedItemGrey2Cols from "@/app/components/FeaturedItemGrey2Cols";
 import FeaturedItemFirst from "@/app/components/FeaturedItemFirst";
 import Categories from "@/app/components/Categories";
 import TextWithPhoto2Cols from "@/app/components/TextWithPhoto2Cols";
-import { CartProvider } from "@/app/components/CartContext";
 
 export default function Home() {
   return (
