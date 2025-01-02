@@ -6,15 +6,14 @@ import CategoryHeader from "@/app/components/CategoryHeader";
 import Categories from "@/app/components/Categories";
 import CategoryItem from "@/app/components/CategoryItem";
 import TextWithPhoto2Cols from "@/app/components/TextWithPhoto2Cols";
-import { CartProvider } from "@/app/components/CartContext";
 
 export default function Earphones() {
   return (
     <>
       <Header>
         <Navbar />
+        <CategoryHeader categoryName="EARPHONES" />
       </Header>
-      <CategoryHeader categoryName="EARPHONES" />
       <Body>
         <CategoryItem
           newItem={true}
