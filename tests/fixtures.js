@@ -1,31 +1,26 @@
 import { test as baseTest } from "@playwright/test";
+import Cart from "./page-objects/Cart";
+import Navbar from "./page-objects/Navbar";
+import ItemPage from "./page-objects/ItemPage";
 
 export const test = baseTest.extend({
   addOneToCart: async ({ page }, use) => {
+    const cart = new Cart(page);
+    const navbar = new Navbar(page);
+    const itemPage = new ItemPage(page);
+
     const itemId = 1;
     await page.goto(`/item/${itemId}`);
-    const itemName = await page
-      .locator('[data-testid="qa-product-name"]')
-      .innerText();
-    const itemPriceElement = await page
-      .locator('[data-testid="qa-add-to-cart-box"]')
-      .locator(':has-text("$")')
-      .innerText();
-    const itemPrice = itemPriceElement.replace("$ ", "");
-    const addToCartBtn = page.getByRole("button", { name: "ADD TO CART" });
+    const itemName = await itemPage.getItemName();
+    const itemPrice = await itemPage.getItemPrice();
     const quantity = Number(await page.getByLabel("Quantity").inputValue());
     expect(quantity).toBe(1);
-    await addToCartBtn.click();
+    await itemPage.addToCart();
+    await navbar.clickCartIcon();
+    await expect(cart.cartItems).toHaveCount(1); // zmien na sprawdzanie quantity?
 
-    const cartIcon = page.getByRole("img", { name: "Basket icon" });
-    await cartIcon.click();
-
-    const cartContent = page.locator('[data-testid="qa-cart-items"]');
-    const cartItems = cartContent.locator(":scope > div");
-    await expect(cartItems).toHaveCount(1);
-
-    const data = { itemName, itemPrice, quantity };
-    await use(data);
+    const testData = { cart, navbar, itemId, itemName, itemPrice, quantity };
+    await use(testData);
   },
 });
 

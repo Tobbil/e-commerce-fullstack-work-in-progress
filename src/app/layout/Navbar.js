@@ -57,7 +57,10 @@ export default function Navbar() {
               />
             </Link>
           </div>
-          <div className="hidden xl:w-full lg:flex lg:justify-center">
+          <div
+            className="hidden xl:w-full lg:flex lg:justify-center"
+            data-testid="navbar-menu"
+          >
             <div className="grid grid-flow-col auto-cols-min gap-4 xl:gap-8 text-fs-13 font-semibold tracking-200 text-[#f2f2f2] content-center">
               <ul className="">
                 <li className="inline mr-8">
