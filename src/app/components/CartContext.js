@@ -1,15 +1,24 @@
 "use client";
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 export function useCart() {
-  return useContext(CartContext);
-}
-
-export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
+
+  // Load cart from localStorage on mount
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      setCartItems(JSON.parse(savedCart));
+    }
+  }, []);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   function addToCart(item) {
     setCartItems((prevItems) => {
@@ -35,17 +44,12 @@ export function CartProvider({ children }) {
     );
   }
 
-  return (
-    <CartContext.Provider
-      value={{
-        cartItems,
-        setCartItems,
-        addToCart,
-        removeFromCart,
-        updateQuantity,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
-  );
+  return { cartItems, setCartItems, addToCart, removeFromCart, updateQuantity };
 }
+
+export const CartProvider = ({ children }) => {
+  const cart = useCart();
+  return <CartContext.Provider value={cart}>{children}</CartContext.Provider>;
+};
+
+export const useCartContext = () => useContext(CartContext);

@@ -1,11 +1,11 @@
 "use client";
 
-import { useCart } from "../components/CartContext";
+import { useCartContext } from "../components/CartContext";
 import { useState } from "react";
 import { convertPrice } from "../../../utils/utils";
 
 export default function AddToCartBox(props) {
-  const { addToCart } = useCart();
+  const { addToCart } = useCartContext();
   const newProduct = props.newProduct; // ZMIEN TO WSZYSTKO ZEBY BYLO BRANE Z ITEMA Z PROPSOW
   const headlineText = props.headlineText;
   const descriptionText = props.descriptionText;
