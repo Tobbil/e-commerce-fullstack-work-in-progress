@@ -3,14 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useCart } from "../components/CartContext";
+import { useCartContext } from "../components/CartContext";
 import CartModal from "../components/CartModal";
 
 export default function Navbar() {
   const menuHover = "hover:text-[#d87d4a] transition duration-200 ease-in-out";
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { cartItems, setCartItems } = useCart();
+  const { cartItems, setCartItems } = useCartContext();
 
   const handleIncrease = (id) => {
     setCartItems((prev) =>
