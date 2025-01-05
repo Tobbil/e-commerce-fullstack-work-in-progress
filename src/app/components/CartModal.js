@@ -36,7 +36,7 @@ export default function CartModal({ isOpen, cartItems, removeAll }) {
                 <div>
                   <h3
                     className="text-sm font-semibold"
-                    data-testid="qa-cart-product-name"
+                    data-testid={`qa-cart-product-${index}-name`}
                   >
                     {item.shortName.toUpperCase()}
                   </h3>
