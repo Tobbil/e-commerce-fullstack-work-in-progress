@@ -9,7 +9,7 @@ export default function CartModal({ isOpen, cartItems, removeAll }) {
 
   return (
     <div
-      className="fixed inset-0 text-black bg-black bg-opacity-50 flex justify-end pointer-events-none z-50 pr-5 md:pr-10 lg:pr-40 pt-32"
+      className="fixed inset-0 text-black bg-black bg-opacity-50 flex justify-center lg:justify-end pointer-events-none z-50 lg:pr-40 pt-32"
       data-testid="qa-cart-modal"
     >
       <div className="bg-white rounded-lg shadow-lg pointer-events-auto z-60 w-96 p-6 relative h-fit">

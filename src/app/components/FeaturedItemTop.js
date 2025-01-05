@@ -29,7 +29,7 @@ export default function FeaturedItemTop(props) {
 
   return (
     <div
-      className={`w-[30rem] md:w-[43rem] lg:w-[69rem] bg-[url('https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/items/1/header_featured_sm_md.png')] 
+      className={`w-[28rem] md:w-[43rem] lg:w-[69rem] bg-[url('https://audiophile-store-bucket.s3.eu-north-1.amazonaws.com/items/1/header_featured_sm_md.png')] 
                   bg-no-repeat bg-[center_bottom_2rem] lg:bg-none self-center flex flex-cols gap-5 overflow-hidden text-darkwhite 
                   mb-14 h-[41rem] justify-evenly`}
     >
