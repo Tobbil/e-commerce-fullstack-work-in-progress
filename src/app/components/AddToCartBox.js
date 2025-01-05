@@ -47,9 +47,36 @@ export default function AddToCartBox(props) {
 
   const [quantity, setQuantity] = useState(1);
 
+  const handleKeyDown = (e) => {
+    // Prevent entering 'e', '.', '-', or '+'
+    if (["e", "E", ".", ",", "-", "+"].includes(e.key)) {
+      e.preventDefault();
+    }
+  };
+
   const handleChange = (e) => {
-    const value = Math.max(1, Math.min(100, Number(e.target.value))); // Limit between 1 and 100
+    let value = e.target.value;
+    if (value === "") {
+      setQuantity("");
+      return;
+    }
+
+    value = Number(value);
+    if (value <= 0) {
+      value = 1;
+    } else if (value > 100) {
+      value = 100;
+    } else {
+      value = value;
+    }
+
     setQuantity(value);
+  };
+
+  const handleBlur = () => {
+    if (quantity === "" || quantity <= 0) {
+      setQuantity(1); // Reset to default value if empty or invalid
+    }
   };
 
   const handleAddToCart = () => {
@@ -93,6 +120,8 @@ export default function AddToCartBox(props) {
               max="100"
               value={quantity}
               onChange={handleChange}
+              onBlur={handleBlur}
+              onKeyDown={handleKeyDown}
               aria-label="Quantity"
             />
             <button
