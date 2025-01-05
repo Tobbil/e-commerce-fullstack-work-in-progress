@@ -6,7 +6,7 @@ import Cart from "./page-objects/Cart";
 
 test.describe("cart tests", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/")
+    await page.goto("/");
     await page.evaluate(() => localStorage.clear());
   });
 
@@ -84,9 +84,11 @@ test.describe("cart tests", () => {
     const { cart, navbar } = addOneToCart;
     const cartItemsBefore = await cart.cartItems.allInnerTexts();
     await navbar.clickHomeButton();
+    await page.waitForLoadState("networkidle");
+    await navbar.clickCartIcon();
     const cartItemsAfter = await cart.cartItems.allInnerTexts();
-    expect(cartItemsBefore).toStrictEqual(
-      cartItemsAfter,
+    expect(cartItemsAfter).toStrictEqual(
+      cartItemsBefore,
       "Cart content was not retained when changing pages"
     );
   });
