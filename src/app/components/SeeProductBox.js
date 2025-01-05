@@ -56,7 +56,7 @@ export default function SeeProductBox(props) {
             {headlineText}
           </h1>
           <div
-            className={`text-fs-13 md:text-fs-15 ${txtColorClass} opacity-75 lg:${paddingDesc}`}
+            className={`pr-4 pl-4 lg:pr-0 lg:pl-0 text-fs-13 md:text-fs-15 ${txtColorClass} opacity-75 lg:${paddingDesc}`}
           >
             {descriptionText}
           </div>
