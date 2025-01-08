@@ -122,7 +122,7 @@ export default function Footer() {
           </div>
           <div className="flex justify-between">
             <p className="text-fs15 text-white font-medium opacity-50 pt-12 text-center">
-              Copyright 2021. All Rights Reserved
+              Copyright 2025. All Rights Reserved
             </p>
             {isTabletViewport ? renderSocials() : ""}
           </div>
