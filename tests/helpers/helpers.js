@@ -1,3 +1,5 @@
+import ItemPage from "../page-objects/ItemPage";
+
 export async function getItemFromDBById(context, id) {
   let item;
   try {
@@ -23,4 +25,18 @@ export async function getItemFromDBByName(context, name) {
 export async function getShortItemNameFromDB(context, name) {
   const item = await getItemFromDBByName(context, name);
   return item.shortName;
+}
+
+export async function addItemToCartByID(context, page, id) {
+  const itemPage = new ItemPage(page);
+  await page.goto(`/item/${id}`);
+  const item = {
+    itemName: (
+      await getShortItemNameFromDB(context, await itemPage.getItemName())
+    ).toUpperCase(),
+    itemPrice: await itemPage.getItemPrice(),
+    quantity: await itemPage.getQuantity(),
+  };
+  await itemPage.addToCart();
+  return item;
 }

@@ -1,5 +1,5 @@
 import { test, expect } from "./fixtures";
-import { getItemFromDBByName, getShortItemNameFromDB } from "./helpers/helpers";
+import { addItemToCartByID, getShortItemNameFromDB } from "./helpers/helpers";
 import ItemPage from "./page-objects/ItemPage";
 import Navbar from "./page-objects/Navbar";
 import Cart from "./page-objects/Cart";
@@ -103,30 +103,14 @@ test.describe("cart tests", () => {
       quantity: await itemPage.getQuantity(),
     };
 
-    await page.goto(`/item/${itemTwoId}`);
-    const itemTwo = {
-      itemName: (
-        await getShortItemNameFromDB(context, await itemPage.getItemName())
-      ).toUpperCase(),
-      itemPrice: await itemPage.getItemPrice(),
-      quantity: await itemPage.getQuantity(),
-    };
-    await itemPage.addToCart();
+    const itemTwo = await addItemToCartByID(context, page, itemTwoId)
     await navbar.clickCartIcon();
     await expect(cart.cartItems).toHaveCount(
       2,
       "Item count is different than expected"
     );
 
-    await page.goto(`/item/${itemThreeId}`);
-    const itemThree = {
-      itemName: (
-        await getShortItemNameFromDB(context, await itemPage.getItemName())
-      ).toUpperCase(),
-      itemPrice: await itemPage.getItemPrice(),
-      quantity: await itemPage.getQuantity(),
-    };
-    await itemPage.addToCart();
+    const itemThree = await addItemToCartByID(context, page, itemThreeId)
     await navbar.clickCartIcon();
     await expect(cart.cartItems).toHaveCount(
       3,
@@ -140,7 +124,7 @@ test.describe("cart tests", () => {
     page,
     addOneToCart,
   }) => {
-    const { cart, itemName, navbar } = addOneToCart;
+    const { cart, navbar } = addOneToCart;
     const itemTwoId = 2;
     const itemPage = new ItemPage(page);
 
