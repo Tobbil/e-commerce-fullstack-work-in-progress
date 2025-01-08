@@ -39,7 +39,7 @@ export default function Navbar() {
     <>
       <nav>
         <div className="grid grid-cols-navbar-mobile md:grid-cols-navbar-tablet lg:grid-cols-navbar-desktop text-white h-[2rem] items-center justify-self-center md:justify-items-start w-[20rem] md:w-[43rem] lg:w-[69rem]">
-          <div className="lg:hidden col-start-auto">
+          <div className="lg:hidden col-start-auto" onClick={() => alert("Not implemented yet! Scroll down to see categories")}>
             <Image
               src="/menu_icon.png"
               alt="menu icon"
