@@ -21,7 +21,6 @@ test.describe("Navbar tests", () => {
 
     for (let i = 0; i < numOfMenuItems; i++) {
       const menuItem = page.locator("ul").first().locator("li").nth(i);
-      console.log(`Expecting ${menuItem} to have text ${expectedText[i]}`);
       await expect(menuItem).toHaveText(expectedText[i]);
     }
   });

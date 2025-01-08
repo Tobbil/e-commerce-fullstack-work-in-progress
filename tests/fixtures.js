@@ -10,7 +10,6 @@ export const test = baseTest.extend({
     const itemPage = new ItemPage(page);
     const itemId = 1;
 
-    // cart.removeAll();
     await page.goto(`/item/${itemId}`);
     const itemName = await itemPage.getItemName();
     const itemPrice = await itemPage.getItemPrice();
