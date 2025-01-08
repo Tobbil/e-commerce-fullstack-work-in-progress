@@ -136,7 +136,7 @@ test.describe("cart tests", () => {
     expect([itemOne, itemTwo, itemThree]).toStrictEqual(cartItems);
   });
 
-  test.only("'remove all' button removes all items from cart", async ({
+  test("'remove all' button removes all items from cart", async ({
     page,
     addOneToCart,
   }) => {
