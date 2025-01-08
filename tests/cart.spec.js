@@ -87,7 +87,7 @@ test.describe("cart tests", () => {
     );
   });
 
-  test.only("multiple different items can be correctly added to cart", async ({
+  test("multiple different items can be correctly added to cart", async ({
     addOneToCart,
     context,
     page,
