@@ -9,11 +9,13 @@ export default class ItemPage {
   }
 
   async getQuantity() {
-    return this.quantityField.inputValue();
+    const quantity = await this.quantityField.inputValue();
+    return Number(quantity)
   }
 
   async getItemName() {
-    return this.itemName.textContent();
+    const itemName = await this.itemName.textContent();
+    return itemName;
   }
 
   async getItemPrice() {

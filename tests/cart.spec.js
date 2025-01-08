@@ -1,5 +1,5 @@
 import { test, expect } from "./fixtures";
-import { getItemFromDBByName } from "./helpers/helpers";
+import { getItemFromDBByName, getShortItemNameFromDB } from "./helpers/helpers";
 import ItemPage from "./page-objects/ItemPage";
 import Navbar from "./page-objects/Navbar";
 import Cart from "./page-objects/Cart";
@@ -20,8 +20,8 @@ test.describe("cart tests", () => {
   });
 
   test("cart starts with 0 items", async ({ page }) => {
-    const cartIcon = page.getByRole("img", { name: "Basket icon" });
-    await cartIcon.click();
+    const navbar = new Navbar(page);
+    await navbar.clickCartIcon();
     const cartContent = page.locator('[data-testid="qa-cart-items"]');
     const cartItems = cartContent.locator(":scope > div");
     await expect(cartItems).toHaveCount(0);
@@ -34,23 +34,17 @@ test.describe("cart tests", () => {
   }) => {
     const { cart, itemName, itemPrice, quantity } = addOneToCart;
 
-    console.log("Checking cart before opening modal...");
-    console.log(await cart.cartItems.allInnerTexts());
-
     const itemNameCart = await cart.getItemName(0);
-    console.log("Item in cart:", itemNameCart);
 
-    const itemDB = await getItemFromDBByName(context, itemName);
-    expect(itemNameCart).toBe(itemDB.shortName.toUpperCase());
+    const itemShortName = await getShortItemNameFromDB(context, itemName);
+    expect(itemNameCart).toBe(itemShortName.toUpperCase());
 
     const itemPriceCart = await cart.getItemPrice(0);
-    console.log("Item price in cart:", itemPriceCart);
     expect(itemPriceCart).toBe(itemPrice);
 
     const quantityCart = Number(
       await page.getByTestId("qa-cart-quantity").innerText()
     );
-    console.log("Quantity in cart:", quantityCart);
     expect(quantityCart).toBe(quantity);
   });
 
@@ -93,23 +87,72 @@ test.describe("cart tests", () => {
     );
   });
 
-  test("multiple different items can be added to cart", async ({
+  test("multiple different items can be correctly added to cart", async ({
     addOneToCart,
+    context,
     page,
   }) => {
-    const itemOneId = 2;
-    const itemTwoId = 3;
-    const { cart, navbar } = addOneToCart;
+    const itemTwoId = 2;
+    const itemThreeId = 3;
+    const { cart, itemName, navbar } = addOneToCart;
     const itemPage = new ItemPage(page);
-    console.log(await itemPage.getQuantity());
-    await page.pause();
-    await page.goto(`/item/${itemOneId}`);
+
+    const itemOne = {
+      itemName: (await getShortItemNameFromDB(context, itemName)).toUpperCase(),
+      itemPrice: await itemPage.getItemPrice(),
+      quantity: await itemPage.getQuantity(),
+    };
+
+    await page.goto(`/item/${itemTwoId}`);
+    const itemTwo = {
+      itemName: (
+        await getShortItemNameFromDB(context, await itemPage.getItemName())
+      ).toUpperCase(),
+      itemPrice: await itemPage.getItemPrice(),
+      quantity: await itemPage.getQuantity(),
+    };
+    await itemPage.addToCart();
+    await navbar.clickCartIcon();
+    await expect(cart.cartItems).toHaveCount(
+      2,
+      "Item count is different than expected"
+    );
+
+    await page.goto(`/item/${itemThreeId}`);
+    const itemThree = {
+      itemName: (
+        await getShortItemNameFromDB(context, await itemPage.getItemName())
+      ).toUpperCase(),
+      itemPrice: await itemPage.getItemPrice(),
+      quantity: await itemPage.getQuantity(),
+    };
+    await itemPage.addToCart();
+    await navbar.clickCartIcon();
+    await expect(cart.cartItems).toHaveCount(
+      3,
+      "Item count is different than expected"
+    );
+    const cartItems = await cart.getAllItems();
+    expect([itemOne, itemTwo, itemThree]).toStrictEqual(cartItems);
+  });
+
+  test("'remove all' button removes all items from cart", async ({
+    page,
+    addOneToCart,
+  }) => {
+    const { cart, itemName, navbar } = addOneToCart;
+    const itemTwoId = 2;
+    const itemPage = new ItemPage(page);
+
+    await page.goto(`/item/${itemTwoId}`);
+    await itemPage.addToCart();
+    await navbar.clickCartIcon();
+    expect(await cart.getAllItemsCount()).toBe(2);
+    await cart.removeAll();
+    expect(await cart.getAllItemsCount()).toBe(0);
   });
 });
 
 // cases:
-// multiple items can be added to cart
-// item count can be increased
 // total sum is correct and changes
-// "remove all" button works
-//
+
