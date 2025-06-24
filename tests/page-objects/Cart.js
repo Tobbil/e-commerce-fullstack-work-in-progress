@@ -13,7 +13,7 @@ export default class Cart {
   }
 
   async increaseItemQuantity(index) {
-    return this.page
+    await this.page
       .getByTestId(`qa-cart-item-${index}`)
       .getByText("+")
       .click();
@@ -36,11 +36,11 @@ export default class Cart {
 
   async getAllItems() {
     const cartItems = [];
-    const cartItemLocators = await this.cartContent.locator(":scope > div");
+    const cartItemLocators = this.cartContent.locator(":scope > div");
     const cartItemCount = await this.getAllItemsCount();
 
     for (let i = 0; i < cartItemCount; i++) {
-      const cartItem = cartItemLocators.nth(i); // Get each cart item by index
+      const cartItem = cartItemLocators.nth(i);
 
       const name = await this.getItemName(i);
       const price = await this.getItemPrice(i);
